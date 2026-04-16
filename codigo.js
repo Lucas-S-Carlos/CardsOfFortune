@@ -1,19 +1,37 @@
+let Ncard
+let record = {}
 
-let aa = document.getElementById("A1")
+let a1 = document.getElementById("A1")
+a1.addEventListener("click", () => {
+    Ncard = 1
+});
+let a1V = false 
 
-aa.addEventListener("click", () => {
 
 
+
+
+a1.addEventListener("click", () => {
+    if (a1V == false) {
+        Sorteio(a1)
+        a1V = true
+    }
+        
+
+});
+
+function Sorteio(carta){
     let sorte = (Math.floor(Math.random() * 100) + 1)
     console.log(sorte)
 
-    if (sorte < 20){
-        aa.style.backgroundColor = "red";
-    } else if(sorte => 20){
-        aa.style.backgroundColor = "blue";
+    if (sorte < 15){
+        carta.style.backgroundImage = 'url(Sourse/Cards/Ouro.png)';
+        console.log('Ouro')
+    } else if((sorte => 15) && (sorte < 50)){
+        carta.style.backgroundImage = "url(Sourse/Cards/Prata.png)";
+        console.log('Prata')
+    } else if(sorte => 50 ){
+        carta.style.backgroundImage = "url(Sourse/Cards/Bronze.png)";
+        console.log('Bronze')
     }
-            
-
-    
-    
-});
+}
