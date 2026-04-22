@@ -20,12 +20,17 @@
 
         <div><div class="card" id="f1"></div><div class="card" id="f2"></div><div class="card" id="f3"></div></div>
     </section>
-    <label>Aposta: <input id="entrada"></input> </label>
+    <label>Aposta: <input disabled type="number" id="entrada"></input> </label>
+    <button id="mais" onclick="adicionar()">+10</button>
+    <button id="menos" onclick="remover()">-10</button>
+
+
     <p id="ganho"></p>
    
 
-
+    <script src="Scr/global.js"></script>
     <script src="Scr/virarCartas.js"></script>
     <script src="Scr/sorteios.js"></script>
+    <script src="Scr/cartas.js"></script>
 </body>
 </html>
