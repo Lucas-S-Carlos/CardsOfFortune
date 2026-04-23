@@ -1,4 +1,4 @@
-
+let podeIr = false
 
 let a1 = document.getElementById("a1")
 let a2 = document.getElementById("a2")
@@ -35,114 +35,114 @@ let Virada = {
 
 
 a1.addEventListener("click", () => {
-    if (Virada['a1'] == false) {
+    if ((Virada['a1'] == false) && (podeIr == true)) {
         Sorteio(a1)
         Virada['a1'] = true
     }
 });
 a2.addEventListener("click", () => {
-    if (Virada['a2'] == false) {
+    if ((Virada['a2'] == false) && (podeIr == true)) {
         Sorteio(a2)
         Virada['a2'] = true
     }
 });
 a3.addEventListener("click", () => {
-    if (Virada['a3'] == false) {
+    if ((Virada['a3'] == false) && (podeIr == true)) {
         Sorteio(a3)
         Virada['a3'] = true
     }
 });
 
 b1.addEventListener("click", () => {
-    if (Virada['b1'] == false) {
+    if ((Virada['b1'] == false) && (podeIr == true)) {
         Sorteio(b1)
         Virada['b1'] = true
     }
 });
 b2.addEventListener("click", () => {
-    if (Virada['b2'] == false) {
+    if ((Virada['b2'] == false) && (podeIr == true)) {
         Sorteio(b2)
         Virada['b2'] = true
     }
 });
 b3.addEventListener("click", () => {
-    if (Virada['b3'] == false) {
+    if ((Virada['b3'] == false)&& (podeIr == true)) {
         Sorteio(b3)
         Virada['b3'] = true
     }
 });
 
 c1.addEventListener("click", () => {
-    if (Virada['c1'] == false) {
+    if ((Virada['c1'] == false)&& (podeIr == true)) {
         Sorteio(c1)
         Virada['c1'] = true
     }
 });
 c2.addEventListener("click", () => {
-    if (Virada['c2'] == false) {
+    if ((Virada['c2'] == false)&& (podeIr == true)) {
         Sorteio(c2)
         Virada['c2'] = true
     }
 });
 c3.addEventListener("click", () => {
-    if (Virada['c3'] == false) {
+    if ((Virada['c3'] == false)&& (podeIr == true)) {
         Sorteio(c3)
         Virada['c3'] = true
     }
 });
 
 d1.addEventListener("click", () => {
-    if (Virada['d1'] == false) {
+    if ((Virada['d1'] == false)&& (podeIr == true)) {
         Sorteio(d1)
         Virada['d1'] = true
     }
 });
 d2.addEventListener("click", () => {
-    if (Virada['d2'] == false) {
+    if ((Virada['d2'] == false)&& (podeIr == true)) {
         Sorteio(d2)
         Virada['d2'] = true
     }
 });
 d3.addEventListener("click", () => {
-    if (Virada['d3'] == false) {
+    if ((Virada['d3'] == false)&& (podeIr == true)) {
         Sorteio(d3)
         Virada['d3'] = true
     }
 });
 
 e1.addEventListener("click", () => {
-    if (Virada['e1'] == false) {
+    if ((Virada['e1'] == false)&& (podeIr == true)) {
         Sorteio(e1)
         Virada['e1'] = true
     }
 });
 e2.addEventListener("click", () => {
-    if (Virada['e2'] == false) {
+    if ((Virada['e2'] == false)&& (podeIr == true)) {
         Sorteio(e2)
         Virada['e2'] = true
     }
 });
 e3.addEventListener("click", () => {
-    if (Virada['e3'] == false) {
+    if ((Virada['e3'] == false)&& (podeIr == true)) {
         Sorteio(e3)
         Virada['e3'] = true
     }
 });
 
 f1.addEventListener("click", () => {
-    if (Virada['f1'] == false) {
+    if ((Virada['f1'] == false)&& (podeIr == true)) {
         Sorteio(f1)
         Virada['f1'] = true
     }
 });
 f2.addEventListener("click", () => {
-    if (Virada['f2'] == false) {
+    if ((Virada['f2'] == false)&& (podeIr == true)) {
         Sorteio(f2)
         Virada['f2'] = true
     }
 });
 f3.addEventListener("click", () => {
-    if (Virada['f3'] == false) {
+    if ((Virada['f3'] == false)&& (podeIr == true)) {
         Sorteio(f3)
         Virada['f3'] = true
     }
