@@ -23,10 +23,30 @@
     <label>Aposta: <input disabled type="number" id="entrada"></input> </label>
     <button id="mais" onclick="adicionar()">+10</button>
     <button id="menos" onclick="remover()">-10</button>
+    <button id="pode" onclick="poder()">Apostar</button>
+    <button disabled=true id="coletar" onclick="exibirModal()">Coletar ganhos</button>
 
 
-    <p id="ganho"></p>
+    <p id="ganho" ></p>
    
+    <dialog id="modal">
+        <h1>Perdeu tudo</h1>
+        <button onclick="reload()">Tente novamente</button>
+    </dialog>
+
+
+    <dialog id="coletaModal">
+        <h1 id="valorModal"></h1>
+        <button onclick="reload()">Tente novamente</button>
+    </dialog>
+
+
+
+
+
+
+
+
 
     <script src="Scr/global.js"></script>
     <script src="Scr/virarCartas.js"></script>

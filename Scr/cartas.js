@@ -25,10 +25,13 @@ function comum(carta, valorDaAposta){
 }
 
 function bomba(carta){
+    const modal = document.getElementById("modal")
+
     carta.style.backgroundImage = "url(Scr/Assets/Cards/Bomba.png)";
     ValorGanho = 0
     console.log(ValorGanho)
     ganhoEL.innerHTML = `Perdeu tudo!`;
+    modal.showModal()
 }
 
 function duplicador(carta){

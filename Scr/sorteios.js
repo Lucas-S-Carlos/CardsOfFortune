@@ -1,6 +1,7 @@
 let CartasViradas = 0
 let ListaDeCartas = []
 
+const coletar = document.getElementById("coletar")
 
 function Sorteio(carta){
     const valorDaAposta = parseInt(document.getElementById("entrada").value)
@@ -15,6 +16,7 @@ function Sorteio(carta){
         Sorte2(sorte, carta, valorDaAposta)
     } else if (CartasViradas == 2) {
         Sorte3(sorte, carta, valorDaAposta)
+        coletar.disabled=false
     } else {
         sorteResto(sorte, carta, valorDaAposta)
     }
@@ -48,7 +50,7 @@ function Sorte2(sorte, carta, valorDaAposta){
         comum(carta, valorDaAposta)
     } 
     else if((sorte > 70) && (sorte <= 80)){                                 //71 até 80
-        bomaba(carta)
+        bomba(carta)
     } 
     else if((sorte > 80) && (sorte <= 90)){                                 //81 até 90
         duplicador(carta)
