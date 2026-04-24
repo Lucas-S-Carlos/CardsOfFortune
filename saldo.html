@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="Scr/css.css">
+    <title>Saldo</title>
+</head>
+<body>
+    <label><input id="saldo" type=int placeholder="Digite seu saldo"></label>
+    <button onclick="verificarSaldo">Confirmar</button>
+    <button onclick="location.href='../index.html'" disabled="!Autorizado"></button>
+
+
+    <script>
+        let Saldo = document.getElementById("saldo")
+        let Autorizado = document.getElementById(Autorizado)
+        Autorizado = false
+
+        function verificarSaldo(Saldo) {
+            if(Saldo > 0 && !isNaN(Saldo)){
+                Atorizado = true
+            }
+            else {
+                Autorizado = false
+            }
+        };
+
+    </script>
+</body>
+</html>
