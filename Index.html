@@ -7,6 +7,12 @@
     <title>CARDS</title>
 </head>
 <body>
+    <label>Tempo restante:
+    <div id="timer">
+
+    </div>
+    </label>
+    
     <section>
         <div><div class="card" id="a1"></div><div class="card" id="a2"></div><div class="card" id="a3"></div></div>
 
@@ -28,6 +34,14 @@
 
 
     <p id="ganho" ></p>
+
+    <dialog id="Cadastro">
+        
+        <h1 id="">Cadastre seus dados</h1>
+        <label for="nome">Digite sue nome: <input id="nome" type="text" placeholder=""></label>
+        <label for="nome">Digite seu saldo atual: <input id="saldo" placeholder=""></label>
+        <button id="btnCad" >Continuar</button>
+    </dialog>
    
     <dialog id="modal">
         <h1>Perdeu tudo</h1>
@@ -49,8 +63,10 @@
 
 
     <script src="Scr/global.js"></script>
+    <script src="Scr/cadastro.js"></script>
     <script src="Scr/virarCartas.js"></script>
     <script src="Scr/sorteios.js"></script>
     <script src="Scr/cartas.js"></script>
+    <script src="Scr/timer.js"></script>
 </body>
 </html>

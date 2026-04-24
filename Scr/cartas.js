@@ -32,6 +32,7 @@ function bomba(carta){
     console.log(ValorGanho)
     ganhoEL.innerHTML = `Perdeu tudo!`;
     modal.showModal()
+
 }
 
 function duplicador(carta){
