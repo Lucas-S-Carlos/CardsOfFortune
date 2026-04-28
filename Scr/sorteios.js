@@ -74,7 +74,7 @@ function Sorte3(sorte, carta, valorDaAposta){
     else if((sorte > 37) && (sorte <= 67)){                                 //38 até 67
         bomba(carta)
     } 
-    else if((sorte > 68) && (sorte <= 70)){                                 //68 até 70
+    else if((sorte > 67) && (sorte <= 70)){                                 //68 até 70
         duplicador(carta)
     } 
     else if(sorte > 70) {                                                   //71 até 100
@@ -84,7 +84,7 @@ function Sorte3(sorte, carta, valorDaAposta){
 
 function sorteResto(sorte, carta, valorDaAposta){
     console.log("sorteresto")
-    if (sorte <= 7){                                                       // 1 até 7
+    if (sorte <= 3){                                                       // 1 até 7
         rara(carta, valorDaAposta)
     } 
     else if((sorte > 3 && (sorte <= 13))){                                 //8 até 17
