@@ -5,12 +5,20 @@ const btnCad = document.getElementById("btnCad");
 
 btnCad.addEventListener("click", () => {
   let nome = document.getElementById("nome").value;
-  let saldo = document.getElementById("saldo").value;
+  const impNome = document.getElementById("nome");
+  let saldo = parseInt(document.getElementById("saldo").value);
+  const impSaldo = document.getElementById("saldo");
 
-  console.log(nome);
-  if 9(nome === "") && ((isNaN(saldo) === true))) {
-    alert("seja gente escreva o seu nome");
-  } else if  {
+  if ((nome === "") || ((isNaN(saldo) === true))) {
+    if (nome === ""){
+      impNome.style.borderColor = "red";
+      alert("Preencha o nome.");
+    }
+    if (isNaN(saldo) === true){
+      impSaldo.style.borderColor = "red";
+      alert("Preencha o saldo atual corretamente.");
+    }
+  } else {
     console.log(isNaN(saldo));
     telaCadastro.close();
     comecarTimer();
