@@ -3,13 +3,23 @@ telaCadastro.showModal();
 
 const btnCad = document.getElementById("btnCad");
 
+const impNome = document.getElementById("nome");
+const impSaldo = document.getElementById("saldo");
+
+const saldoAtual = document.getElementById("saldoAtual")
+
+impNome.style.borderColor = "white";
+impSaldo.style.borderColor = "white";
+
 btnCad.addEventListener("click", () => {
   let nome = document.getElementById("nome").value;
-  const impNome = document.getElementById("nome");
   let saldo = parseInt(document.getElementById("saldo").value);
-  const impSaldo = document.getElementById("saldo");
+  
 
   if ((nome === "") || ((isNaN(saldo) === true))) {
+    impNome.style.borderColor = "white";
+    impSaldo.style.borderColor = "white";
+
     if (nome === ""){
       impNome.style.borderColor = "red";
       alert("Preencha o nome.");
@@ -19,6 +29,8 @@ btnCad.addEventListener("click", () => {
       alert("Preencha o saldo atual corretamente.");
     }
   } else {
+    saldoAtual.innerHTML = saldo
+
     console.log(isNaN(saldo));
     telaCadastro.close();
     comecarTimer();

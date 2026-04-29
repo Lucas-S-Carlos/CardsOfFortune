@@ -31,6 +31,8 @@
     <button id="menos" onclick="remover()">-10</button>
     <button id="pode" onclick="poder()">Apostar</button>
     <button disabled=true id="coletar" onclick="exibirModal()">Coletar ganhos</button>
+    <p>Saldo Atual:</p><p id="saldoAtual"></p>
+
 
 
     <p id="ganho" ></p>
@@ -38,20 +40,23 @@
     <dialog id="Cadastro">
         
         <h1 id="">Cadastre seus dados</h1>
-        <label for="nome">Digite sue nome: <input id="nome" type="text" placeholder=""></label>
-        <label for="nome">Digite seu saldo atual: <input type="number" id="saldo" placeholder=""></label>
+        <label for="nome">Digite sue nome completo: <input p id="nome" type="text" placeholder="Ex.: Maria Barbosa"></label>
+        <label for="nome">Digite seu saldo atual: <input type="number" id="saldo" placeholder="Ex.: 10, 20, 100"></label>
         <button id="btnCad" >Continuar</button>
     </dialog>
    
-    <dialog id="modal">
+    <dialog id="perdeModal">
         <h1>Perdeu tudo</h1>
-        <button onclick="reload()">Tente novamente</button>
+        <button onclick="continuar('perdeu')">Tente novamente</button>
+        <button onclick="reload()">Desistir</button>
     </dialog>
 
 
     <dialog id="coletaModal">
         <h1 id="valorModal"></h1>
-        <button onclick="reload()">Tente novamente</button>
+        <button onclick="continuar('ganhou')">Continue jogando</button>
+        <button onclick="reload()">Sair</button>
+        
     </dialog>
 
 

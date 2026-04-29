@@ -15,13 +15,15 @@
 
         if (--timer < 0) {
             timer = duration;
+            ganhoEL.innerHTML = `Acabou seu tempo!`;
+            perdeModal.showModal()
             alert("Seu tempo acabou! Próximo jogador.");
 
             const modal = document.getElementById("modal")
 
 
-            ValorGanho = 0
-            console.log(ValorGanho)
+            valorGanho = 0
+            console.log(valorGanho)
             ganhoEL.innerHTML = `Perdeu tudo!`;
             modal.showModal()
 

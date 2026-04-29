@@ -1,50 +1,54 @@
-ganhoEL = document.getElementById("ganho");
+let ganhoEL = document.getElementById("ganho");
 
-let ValorGanho = 0
+
 
 function rara(carta, valorDaAposta){
     carta.style.backgroundImage = 'url(Scr/Assets/Cards/Rara.png)';
        
-        ValorGanho = ValorGanho + (3 * valorDaAposta);
-        console.log(ValorGanho);
-        ganhoEL.innerHTML = `Triplicou! Ganhou ${ValorGanho}`;
+        valorGanho = valorGanho + (3 * valorDaAposta);
+        console.log(valorGanho);
+        ganhoEL.innerHTML = `Triplicou! Ganhou ${valorGanho}`;
 }
 function incomum(carta, valorDaAposta){
     carta.style.backgroundImage = "url(Scr/Assets/Cards/Incomum.png)";
 
-    ValorGanho = ValorGanho + (2 * valorDaAposta)
-    console.log(ValorGanho)
-    ganhoEL.innerHTML = `Duplicou! Ganhou ${ValorGanho}`; 
+    valorGanho = valorGanho + (2 * valorDaAposta)
+    console.log(valorGanho)
+    ganhoEL.innerHTML = `Duplicou! Ganhou ${valorGanho}`; 
 }
 function comum(carta, valorDaAposta){ 
     carta.style.backgroundImage = "url(Scr/Assets/Cards/Comum.png)";
 
-    ValorGanho = ValorGanho + valorDaAposta
-    console.log(ValorGanho)
-    ganhoEL.innerHTML = `Se pagou! Recebeu ${ValorGanho}`;
+    valorGanho = valorGanho + valorDaAposta
+    console.log(valorGanho)
+    ganhoEL.innerHTML = `Se pagou! Recebeu ${valorGanho}`;
 }
 
 function bomba(carta){
-    const modal = document.getElementById("modal")
+    
 
     carta.style.backgroundImage = "url(Scr/Assets/Cards/Bomba.png)";
-    ValorGanho = 0
-    console.log(ValorGanho)
+    valorGanho = 0
+    console.log(valorGanho)
     ganhoEL.innerHTML = `Perdeu tudo!`;
-    modal.showModal()
+    perdeModal.showModal()
 
 }
 
 function duplicador(carta){
     carta.style.backgroundImage = "url(Scr/Assets/Cards/Dublicador.png)";
-    ValorGanho = ValorGanho * 2
-    console.log(ValorGanho)
-    ganhoEL.innerHTML = `Dobrou! Ganhou ${ValorGanho}`;
+    valorGanho = valorGanho * 2
+    console.log(valorGanho)
+    ganhoEL.innerHTML = `Dobrou! Ganhou ${valorGanho}`;
 }
 
 function divididor(carta){
     carta.style.backgroundImage = "url(Scr/Assets/Cards/Faca.png)";
-    ValorGanho = ValorGanho / 2
-    console.log(ValorGanho)
-    ganhoEL.innerHTML = `Pela metade! Restou ${ValorGanho}`;
+
+
+    valorGanho = parseInt((valorGanho / 10) / 2)*10
+    console.log(valorGanho)
+    ganhoEL.innerHTML = `Pela metade! Restou ${valorGanho}`;
+
+
 }
