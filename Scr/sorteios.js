@@ -25,7 +25,7 @@ function Sorteio(carta){
 }
 
 function Sorte1(sorte, carta, valorDaAposta){
-    console.log(valorDaAposta)
+
     if (sorte <= 40){                                                       // 1 até 40
         rara(carta, valorDaAposta)
     } 
@@ -38,7 +38,7 @@ function Sorte1(sorte, carta, valorDaAposta){
 }
 
 function Sorte2(sorte, carta, valorDaAposta){
-    console.log("sorte2")
+
     if (sorte <= 20){                                                       // 1 até 20
         rara(carta, valorDaAposta)
     } 
@@ -50,7 +50,7 @@ function Sorte2(sorte, carta, valorDaAposta){
         comum(carta, valorDaAposta)
     } 
     else if((sorte > 70) && (sorte <= 80)){                                 //71 até 80
-        bomba(carta)
+        bomba(carta, valorDaAposta)
     } 
     else if((sorte > 80) && (sorte <= 90)){                                 //81 até 90
         duplicador(carta)
@@ -61,7 +61,7 @@ function Sorte2(sorte, carta, valorDaAposta){
 }
 
 function Sorte3(sorte, carta, valorDaAposta){
-    console.log("sorte3")
+
     if (sorte <= 7){                                                       // 1 até 7
         rara(carta, valorDaAposta)
     } 
@@ -72,7 +72,7 @@ function Sorte3(sorte, carta, valorDaAposta){
         comum(carta, valorDaAposta)
     } 
     else if((sorte > 37) && (sorte <= 67)){                                 //38 até 67
-        bomba(carta)
+        bomba(carta, valorDaAposta)
     } 
     else if((sorte > 68) && (sorte <= 70)){                                 //68 até 70
         duplicador(carta)
@@ -83,7 +83,7 @@ function Sorte3(sorte, carta, valorDaAposta){
 }
 
 function sorteResto(sorte, carta, valorDaAposta){
-    console.log("sorteresto")
+
     if (sorte <= 7){                                                       // 1 até 7
         rara(carta, valorDaAposta)
     } 
@@ -94,7 +94,7 @@ function sorteResto(sorte, carta, valorDaAposta){
         comum(carta, valorDaAposta)
     } 
     else if((sorte > 30) && (sorte <= 80)){                                 //38 até 67
-        bomba(carta)
+        bomba(carta, valorDaAposta)
     } 
     else if((sorte > 80) && (sorte <= 85)){                                 //68 até 70
         duplicador(carta)

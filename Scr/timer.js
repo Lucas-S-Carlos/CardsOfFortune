@@ -23,7 +23,7 @@
 
 
             valorGanho = 0
-            console.log(valorGanho)
+
             ganhoEL.innerHTML = `Perdeu tudo!`;
             modal.showModal()
 

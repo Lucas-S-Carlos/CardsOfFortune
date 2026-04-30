@@ -1,10 +1,11 @@
 document.getElementById("entrada").value = 0
 const coletaModal = document.getElementById("coletaModal") 
 let perdeModal = document.getElementById("perdeModal")
+let overModal = document.getElementById("gameOverModal")
 const resultado = document.getElementById("valorModal")
 
 let valorGanho = 0
-
+let saldoPos = 0
 
 
 function adicionar (){
@@ -36,7 +37,6 @@ function reset() {
     'd1': false, 'd2': false, 'd3': false, 
     'e1': false, 'e2': false, 'e3': false, 
     'f1': false, 'f2': false, 'f3': false}   
-    console.log(Virada)
 
         coletar.disabled=true
 
@@ -50,7 +50,7 @@ function reset() {
 
 
 function continuar (result) {
-    console.log(result)
+
     let saldo = parseInt(document.getElementById("saldo").value);
     let valorDaAposta = parseInt(document.getElementById("entrada").value)
 
@@ -58,6 +58,7 @@ function continuar (result) {
     if (result === 'perdeu') {
 
        saldo = saldo - valorDaAposta;
+       saldoPos = saldo
        saldoAtual.innerHTML = saldo
        perdeModal.close()
        reset()
@@ -66,6 +67,7 @@ function continuar (result) {
 
        saldo = saldo + valorGanho;
        saldoAtual.innerHTML = saldo
+       saldoPos = saldo
        coletaModal.close()
        reset()
     }
@@ -79,13 +81,9 @@ function exibirModal(){
 };
 
 
-
-
 function poder(){
-    // if (aposta > saldo)
-
-
-    if (parseInt(document.getElementById("entrada").value) == 0){
+    console.log(saldoPos, parseInt(document.getElementById("entrada").value))
+    if ((parseInt(document.getElementById("entrada").value) == 0) || (parseInt(document.getElementById("entrada").value) > parseInt(saldoPos))) {
         podeIr = false
     } else {
         podeIr = true

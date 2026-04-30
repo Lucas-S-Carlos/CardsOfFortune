@@ -29,6 +29,7 @@ btnCad.addEventListener("click", () => {
       alert("Preencha o saldo atual corretamente.");
     }
   } else {
+    saldoPos = saldo
     saldoAtual.innerHTML = saldo
 
     console.log(isNaN(saldo));
