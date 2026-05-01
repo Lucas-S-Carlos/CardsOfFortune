@@ -1,49 +1,73 @@
-ganhoEL = document.getElementById("ganho");
+let ganhoEL = document.getElementById("ganho");
 
-let ValorGanho = 0
+
 
 function rara(carta, valorDaAposta){
     carta.style.backgroundImage = 'url(Scr/Assets/Cards/Rara.png)';
        
-        ValorGanho = ValorGanho + (3 * valorDaAposta);
-        console.log(ValorGanho);
-        ganhoEL.innerHTML = `Triplicou! Ganhou ${ValorGanho}`;
+        valorGanho = valorGanho + (3 * valorDaAposta);
+
+        ganhoEL.innerHTML = `Triplicou! Ganhou ${valorGanho}`;
 }
 function incomum(carta, valorDaAposta){
     carta.style.backgroundImage = "url(Scr/Assets/Cards/Incomum.png)";
 
-    ValorGanho = ValorGanho + (2 * valorDaAposta)
-    console.log(ValorGanho)
-    ganhoEL.innerHTML = `Duplicou! Ganhou ${ValorGanho}`; 
+    valorGanho = valorGanho + (2 * valorDaAposta)
+
+    ganhoEL.innerHTML = `Duplicou! Ganhou ${valorGanho}`; 
 }
 function comum(carta, valorDaAposta){ 
     carta.style.backgroundImage = "url(Scr/Assets/Cards/Comum.png)";
 
-    ValorGanho = ValorGanho + valorDaAposta
-    console.log(ValorGanho)
-    ganhoEL.innerHTML = `Se pagou! Recebeu ${ValorGanho}`;
+    valorGanho = valorGanho + valorDaAposta
+
+    ganhoEL.innerHTML = `Se pagou! Recebeu ${valorGanho}`;
 }
 
-function bomba(carta){
-    const modal = document.getElementById("modal")
+
+
+function bomba(carta, valorDaAposta){
+    
 
     carta.style.backgroundImage = "url(Scr/Assets/Cards/Bomba.png)";
-    ValorGanho = 0
-    console.log(ValorGanho)
+    valorGanho = 0
+
+    virarTudo()
+
+
     ganhoEL.innerHTML = `Perdeu tudo!`;
-    modal.showModal()
+    console.log(parseInt(saldoAtual.innerText) - valorDaAposta)
+
+    if ((parseInt(saldoAtual.innerText) - valorDaAposta) == 0) {
+        saldoAtual.innerHTML = parseInt(saldoAtual.value) - valorDaAposta
+        console.log (document.getElementById("saldoAtual").value)
+        overModal.showModal()
+    } else {
+        // saldoAtual.innerHTML = parseInt(saldoAtual.value) - valorDaAposta
+        console.log (document.getElementById("saldoAtual").value)
+        perdeModal.showModal()
+    }
+
+    
+
 }
 
 function duplicador(carta){
-    carta.style.backgroundImage = "url(Scr/Assets/Cards/Dublicador.png)";
-    ValorGanho = ValorGanho * 2
-    console.log(ValorGanho)
-    ganhoEL.innerHTML = `Dobrou! Ganhou ${ValorGanho}`;
+    carta.style.backgroundImage = "url(Scr/Assets/Cards/Duplicador.png)";
+    valorGanho = valorGanho * 2
+ 
+    ganhoEL.innerHTML = `Dobrou! Ganhou ${valorGanho}`;
 }
 
 function divididor(carta){
     carta.style.backgroundImage = "url(Scr/Assets/Cards/Faca.png)";
-    ValorGanho = ValorGanho / 2
-    console.log(ValorGanho)
-    ganhoEL.innerHTML = `Pela metade! Restou ${ValorGanho}`;
+    ganhoEL.innerHTML = `Assalto!!! Te roubaram ${parseInt((valorGanho / 10) / 4)*10*3}!`;
+
+    valorGanho = parseInt((valorGanho / 10) / 4)*10
+
+    ganhoEL.innerHTML = ganhoEL.innerHTML + ` Lhe restou ${valorGanho}`
+
+    
+
+
 }
