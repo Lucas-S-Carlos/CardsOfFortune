@@ -30,7 +30,7 @@ function remover (){
 
 function reload() {
     localStorage.clear()
-    window.location.href = "Index.html";
+    window.location.href = "index.html";
 }
 function reset() {
     podeIr = false
