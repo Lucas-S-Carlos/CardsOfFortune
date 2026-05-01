@@ -5,6 +5,8 @@ let perdeModal = document.getElementById("perdeModal")
 let overModal = document.getElementById("gameOverModal")
 const resultado = document.getElementById("valorModal")
 
+const aMais = document.getElementById("mais")
+const aMenos = document.getElementById("menos")
 
 let saldoAtual = document.getElementById("saldoAtual")
 console.log(localStorage.getItem('saldo'))
@@ -36,6 +38,9 @@ function reset() {
     podeIr = false
     CartasViradas = 0
     valorDaAposta = 0
+
+    aMais.disabled=false
+    aMenos.disabled=false
 
     document.getElementById("entrada").value = 0
     Virada = {
@@ -91,7 +96,12 @@ function poder(){
         alert('O valor da aposta não pode ser maior que o saldo nem 0!')
         podeIr = false
     } else {
+        aMais.disabled=true
+        aMenos.disabled=true
         podeIr = true
+
+
+
     }
     
 }
