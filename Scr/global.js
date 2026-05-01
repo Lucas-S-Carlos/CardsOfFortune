@@ -1,8 +1,14 @@
 document.getElementById("entrada").value = 0
+
 const coletaModal = document.getElementById("coletaModal") 
 let perdeModal = document.getElementById("perdeModal")
 let overModal = document.getElementById("gameOverModal")
 const resultado = document.getElementById("valorModal")
+
+
+let saldoAtual = document.getElementById("saldoAtual")
+console.log(localStorage.getItem('saldo'))
+saldoAtual.innerHTML= localStorage.getItem('saldo');
 
 let valorGanho = 0
 let saldoPos = 0
@@ -23,12 +29,14 @@ function remover (){
 }
 
 function reload() {
-    location.reload(true)
+    localStorage.clear()
+    window.location.href = "Index.html";
 }
 function reset() {
     podeIr = false
     CartasViradas = 0
     valorDaAposta = 0
+
     document.getElementById("entrada").value = 0
     Virada = {
     'a1': false, 'a2': false, 'a3': false, 
@@ -51,23 +59,19 @@ function reset() {
 
 function continuar (result) {
 
-    let saldo = parseInt(document.getElementById("saldo").value);
-    let valorDaAposta = parseInt(document.getElementById("entrada").value)
+  
 
 
     if (result === 'perdeu') {
-
-       saldo = saldo - valorDaAposta;
-       saldoPos = saldo
-       saldoAtual.innerHTML = saldo
+        const valor =  parseInt(document.getElementById("entrada").value)
+        saldoAtual.innerHTML = parseInt(saldoAtual.innerText) - valor
+       
        perdeModal.close()
        reset()
        
     } else if (result === 'ganhou') {
+       saldoAtual.innerHTML = parseInt(saldoAtual.innerText) + valorGanho
 
-       saldo = saldo + valorGanho;
-       saldoAtual.innerHTML = saldo
-       saldoPos = saldo
        coletaModal.close()
        reset()
     }
@@ -83,7 +87,8 @@ function exibirModal(){
 
 function poder(){
     console.log(saldoPos, parseInt(document.getElementById("entrada").value))
-    if ((parseInt(document.getElementById("entrada").value) == 0) || (parseInt(document.getElementById("entrada").value) > parseInt(saldoPos))) {
+    if ((parseInt(document.getElementById("entrada").value) == 0) || (parseInt(document.getElementById("entrada").value) > parseInt(saldoAtual.innerText))) {
+        alert('O valor da aposta não pode ser maior que o saldo nem 0!')
         podeIr = false
     } else {
         podeIr = true

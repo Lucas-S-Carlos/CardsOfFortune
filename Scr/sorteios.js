@@ -4,7 +4,7 @@ let ListaDeCartas = []
 const coletar = document.getElementById("coletar")
 
 function Sorteio(carta){
-    const valorDaAposta = parseInt(document.getElementById("entrada").value)
+    let valorDaAposta = parseInt(document.getElementById("entrada").value)
 
 
     let sorte = (Math.floor(Math.random() * 100) + 1) //gera um número de 1 até 100
@@ -101,5 +101,31 @@ function sorteResto(sorte, carta, valorDaAposta){
     } 
     else if(sorte > 85) {                                                   //71 até 100
         divididor(carta)
+    } 
+}
+
+function SorteioFake(carta){
+    
+    sorte = (Math.floor(Math.random() * 100) + 1)
+
+
+    if (sorte <= 20){                                                       // 1 até 20
+        carta.style.backgroundImage = 'url(Scr/Assets/Cards/Rara.png)';
+    } 
+    else if((sorte > 20) && (sorte <= 50)){                                 //21 até 50
+        carta.style.backgroundImage = 'url(Scr/Assets/Cards/Incomum.png)';
+
+    } 
+    else if((sorte > 50) && (sorte <= 70)){                                 //51 até 70
+        carta.style.backgroundImage = 'url(Scr/Assets/Cards/Comum.png)';
+    } 
+    else if((sorte > 70) && (sorte <= 80)){                                 //71 até 80
+        carta.style.backgroundImage = 'url(Scr/Assets/Cards/Bomba.png)';
+    } 
+    else if((sorte > 80) && (sorte <= 90)){                                 //81 até 90
+       carta.style.backgroundImage = 'url(Scr/Assets/Cards/Duplicador.png)';
+    } 
+    else if(sorte > 90) {                                                   //91 até 100
+        carta.style.backgroundImage = 'url(Scr/Assets/Cards/Faca.png)';
     } 
 }

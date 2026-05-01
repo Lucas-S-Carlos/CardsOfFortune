@@ -36,7 +36,7 @@
     }
 
 
-    function comecarTimer() {
+    window.onload = function () {
         var duration = 60 * 3;
         var display = document.querySelector("#timer");
 

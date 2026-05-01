@@ -1,17 +1,18 @@
 const telaCadastro = document.getElementById("Cadastro");
-telaCadastro.showModal();
+
 
 const btnCad = document.getElementById("btnCad");
 
 const impNome = document.getElementById("nome");
 const impSaldo = document.getElementById("saldo");
 
-const saldoAtual = document.getElementById("saldoAtual")
+
 
 impNome.style.borderColor = "white";
 impSaldo.style.borderColor = "white";
 
-btnCad.addEventListener("click", () => {
+function cadastrar () {
+  console.log(  'sim')
   let nome = document.getElementById("nome").value;
   let saldo = parseInt(document.getElementById("saldo").value);
   
@@ -29,11 +30,12 @@ btnCad.addEventListener("click", () => {
       alert("Preencha o saldo atual corretamente.");
     }
   } else {
-    saldoPos = saldo
-    saldoAtual.innerHTML = saldo
+    console.log (saldo)
+    localStorage.setItem("saldo", saldo)
+
 
     console.log(isNaN(saldo));
-    telaCadastro.close();
-    comecarTimer();
+    window.location.href = "jogo.html";
+
   }
-});
+};
