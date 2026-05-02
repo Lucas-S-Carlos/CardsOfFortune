@@ -1,56 +1,78 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Scr/css.css">
-    <title>CARDS</title>
+    <title>Cadastro</title>
+
 </head>
+
 <body>
-    <section>
-        <div><div class="card" id="a1"></div><div class="card" id="a2"></div><div class="card" id="a3"></div></div>
+    <div class="fundo"></div>
 
-        <div><div class="card" id="b1"></div><div class="card" id="b2"></div><div class="card" id="b3"></div></div>
+    <header class="header">
+        <nav class="nav">
+            <div class="titulo-container">
+                <h1 class="titulo">Cards of Fortune</h1>
+            </div>
+        </nav>
+    </header>
 
-        <div><div class="card" id="c1"></div><div class="card" id="c2"></div><div class="card" id="c3"></div></div>
+    <div class="particles" id="pts"></div>
 
-        <div><div class="card" id="d1"></div><div class="card" id="d2"></div><div class="card" id="d3"></div></div>
+    <div class="login-wrapper">
+        <div class="login-card">
+            <h2 class="login-titulo">Bem-vindo!</h2>
 
-        <div><div class="card" id="e1"></div><div class="card" id="e2"></div><div class="card" id="e3"></div></div>
+            <div class="login-separador"></div>
 
-        <div><div class="card" id="f1"></div><div class="card" id="f2"></div><div class="card" id="f3"></div></div>
-    </section>
-    <label>Aposta: <input disabled type="number" id="entrada"></input> </label>
-    <button id="mais" onclick="adicionar()">+10</button>
-    <button id="menos" onclick="remover()">-10</button>
-    <button id="pode" onclick="poder()">Apostar</button>
-    <button disabled=true id="coletar" onclick="exibirModal()">Coletar ganhos</button>
+            <div>
+                <label class="login-label" for="nome">Nome completo</label>
+                <input class="login-input" id="nome" type="text" placeholder="Ex.: Maria Barbosa" />
+            </div>
 
+            <div>
+                <label class="login-label" for="saldo">Saldo inicial ($)</label>
+                <input class="login-input" type="number" id="saldo" placeholder="Ex.: 100, 500, 1000" />
+            </div>
 
-    <p id="ganho" ></p>
-   
-    <dialog id="modal">
-        <h1>Perdeu tudo</h1>
-        <button onclick="reload()">Tente novamente</button>
-    </dialog>
+            <div class="login-separador"></div>
 
+            <button class="btn-entrar" onclick="cadastrar()">JOGAR AGORA</button>
+        </div>
+    </div>
 
-    <dialog id="coletaModal">
-        <h1 id="valorModal"></h1>
-        <button onclick="reload()">Tente novamente</button>
-    </dialog>
-
-
-
-
-
-
-
-
-
-    <script src="Scr/global.js"></script>
-    <script src="Scr/virarCartas.js"></script>
-    <script src="Scr/sorteios.js"></script>
-    <script src="Scr/cartas.js"></script>
+    <footer class="footer">
+        <div class="footer-content">
+            <h2 class="footer-logo">CARDS OF FORTUNE</h2>
+            <p class="footer-text">
+                Projeto desenvolvido exclusivamente para fins educacionais. Jogue sem responsabilidade.
+            </p>
+            <div class="footer-links">
+                <a>Termos</a>
+                <a>Jeff é um grande professor</a>
+                <a>Suporte</a>
+            </div>
+            <p class="footer-copy">© 2026 DSBet - Todos os direitos reservados</p>
+        </div>
+    </footer>
+    <script src="Scr/cadastro.js"></script>
+    <script>
+        const syms = ['🃏', '💰', '⭐', '💎', '🎰', '♠', '♥', '♦', '♣', '🏆', '🎴'];
+        const pts = document.getElementById('pts');
+        for (let i = 0; i < 20; i++) {
+            const el = document.createElement('div');
+            el.className = 'particle';
+            el.textContent = syms[Math.floor(Math.random() * syms.length)];
+            el.style.left = (Math.random() * 90) + 'vw';
+            el.style.animationDuration = (9 + Math.random() * 14) + 's';
+            el.style.animationDelay = (Math.random() * 18) + 's';
+            el.style.fontSize = (13 + Math.random() * 18) + 'px';
+            pts.appendChild(el);
+        }
+    </script>
 </body>
+
 </html>

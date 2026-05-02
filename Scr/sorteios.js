@@ -4,7 +4,7 @@ let ListaDeCartas = []
 const coletar = document.getElementById("coletar")
 
 function Sorteio(carta){
-    const valorDaAposta = parseInt(document.getElementById("entrada").value)
+    let valorDaAposta = parseInt(document.getElementById("entrada").value)
 
 
     let sorte = (Math.floor(Math.random() * 100) + 1) //gera um número de 1 até 100
@@ -25,7 +25,7 @@ function Sorteio(carta){
 }
 
 function Sorte1(sorte, carta, valorDaAposta){
-    console.log(valorDaAposta)
+
     if (sorte <= 40){                                                       // 1 até 40
         rara(carta, valorDaAposta)
     } 
@@ -38,7 +38,7 @@ function Sorte1(sorte, carta, valorDaAposta){
 }
 
 function Sorte2(sorte, carta, valorDaAposta){
-    console.log("sorte2")
+
     if (sorte <= 20){                                                       // 1 até 20
         rara(carta, valorDaAposta)
     } 
@@ -50,7 +50,7 @@ function Sorte2(sorte, carta, valorDaAposta){
         comum(carta, valorDaAposta)
     } 
     else if((sorte > 70) && (sorte <= 80)){                                 //71 até 80
-        bomba(carta)
+        bomba(carta, valorDaAposta)
     } 
     else if((sorte > 80) && (sorte <= 90)){                                 //81 até 90
         duplicador(carta)
@@ -61,7 +61,7 @@ function Sorte2(sorte, carta, valorDaAposta){
 }
 
 function Sorte3(sorte, carta, valorDaAposta){
-    console.log("sorte3")
+
     if (sorte <= 7){                                                       // 1 até 7
         rara(carta, valorDaAposta)
     } 
@@ -72,9 +72,9 @@ function Sorte3(sorte, carta, valorDaAposta){
         comum(carta, valorDaAposta)
     } 
     else if((sorte > 37) && (sorte <= 67)){                                 //38 até 67
-        bomba(carta)
+        bomba(carta, valorDaAposta)
     } 
-    else if((sorte > 68) && (sorte <= 70)){                                 //68 até 70
+    else if((sorte > 67) && (sorte <= 70)){                                 //68 até 70
         duplicador(carta)
     } 
     else if(sorte > 70) {                                                   //71 até 100
@@ -84,7 +84,7 @@ function Sorte3(sorte, carta, valorDaAposta){
 
 function sorteResto(sorte, carta, valorDaAposta){
     console.log("sorteresto")
-    if (sorte <= 7){                                                       // 1 até 7
+    if (sorte <= 3){                                                       // 1 até 7
         rara(carta, valorDaAposta)
     } 
     else if((sorte > 3 && (sorte <= 13))){                                 //8 até 17
@@ -94,12 +94,38 @@ function sorteResto(sorte, carta, valorDaAposta){
         comum(carta, valorDaAposta)
     } 
     else if((sorte > 30) && (sorte <= 80)){                                 //38 até 67
-        bomba(carta)
+        bomba(carta, valorDaAposta)
     } 
     else if((sorte > 80) && (sorte <= 85)){                                 //68 até 70
         duplicador(carta)
     } 
     else if(sorte > 85) {                                                   //71 até 100
         divididor(carta)
+    } 
+}
+
+function SorteioFake(carta){
+    
+    sorte = (Math.floor(Math.random() * 100) + 1)
+
+
+    if (sorte <= 20){                                                       // 1 até 20
+        carta.style.backgroundImage = 'url(Scr/Assets/Cards/Rara.png)';
+    } 
+    else if((sorte > 20) && (sorte <= 50)){                                 //21 até 50
+        carta.style.backgroundImage = 'url(Scr/Assets/Cards/Incomum.png)';
+
+    } 
+    else if((sorte > 50) && (sorte <= 70)){                                 //51 até 70
+        carta.style.backgroundImage = 'url(Scr/Assets/Cards/Comum.png)';
+    } 
+    else if((sorte > 70) && (sorte <= 80)){                                 //71 até 80
+        carta.style.backgroundImage = 'url(Scr/Assets/Cards/Bomba.png)';
+    } 
+    else if((sorte > 80) && (sorte <= 90)){                                 //81 até 90
+       carta.style.backgroundImage = 'url(Scr/Assets/Cards/Duplicador.png)';
+    } 
+    else if(sorte > 90) {                                                   //91 até 100
+        carta.style.backgroundImage = 'url(Scr/Assets/Cards/Faca.png)';
     } 
 }

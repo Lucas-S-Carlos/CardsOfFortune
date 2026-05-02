@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Scr/css.css">
+    <title>CARDS</title>
+</head>
+
+<body>
+    <div class="fundo"></div>
+
+    <header class="header">
+        <nav class="nav">
+            <div class="titulo-container">
+                <h1 class="titulo">Cards of Fortune</h1>
+            </div>
+            <a href="index.html" class="link-saldo">Sair</a>
+        </nav>
+    </header>
+
+    <section>
+        <div>
+            <div class="card" id="a1"></div>
+            <div class="card" id="a2"></div>
+            <div class="card" id="a3"></div>
+        </div>
+
+        <div>
+            <div class="card" id="b1"></div>
+            <div class="card" id="b2"></div>
+            <div class="card" id="b3"></div>
+        </div>
+
+        <div>
+            <div class="card" id="c1"></div>
+            <div class="card" id="c2"></div>
+            <div class="card" id="c3"></div>
+        </div>
+
+        <div>
+            <div class="card" id="d1"></div>
+            <div class="card" id="d2"></div>
+            <div class="card" id="d3"></div>
+        </div>
+
+        <div>
+            <div class="card" id="e1"></div>
+            <div class="card" id="e2"></div>
+            <div class="card" id="e3"></div>
+        </div>
+
+        <div>
+            <div class="card" id="f1"></div>
+            <div class="card" id="f2"></div>
+            <div class="card" id="f3"></div>
+        </div>
+    </section>
+    <label>Aposta: <input disabled type="number" id="entrada"></input> </label>
+    <button id="mais" onclick="adicionar()">+10</button>
+    <button id="menos" onclick="remover()">-10</button>
+    <button id="pode" onclick="poder()">Apostar</button>
+    <button disabled=true id="coletar" onclick="exibirModal()">Coletar ganhos</button>
+    <p>Saldo Atual:</p>
+    <p id="saldoAtual"></p>
+
+
+
+    <p id="ganho"></p>
+
+    <dialog id="perdeModal">
+        <h1>Perdeu tudo</h1>
+        <button onclick="continuar('perdeu')">Tente novamente</button>
+        <button onclick="reload()">Desistir</button>
+    </dialog>
+    <dialog id="gameOverModal">
+        <h1>Perdeu tudo</h1>
+        <button onclick="reload()">Desistir</button>
+    </dialog>
+
+
+    <dialog id="coletaModal">
+        <h1 id="valorModal"></h1>
+        <button onclick="continuar('ganhou')">Continue jogando</button>
+        <button onclick="reload()">Sair</button>
+
+    </dialog>
+    <footer class="footer">
+        <div class="footer-content">
+            <h2 class="footer-logo">CARDS OF FORTUNE</h2>
+            <p class="footer-text">
+                Projeto desenvolvido exclusivamente para fins educacionais, no âmbito das atividades acadêmicas da
+                ETEC de Guarulhos.
+            </p>
+            <div class="footer-links">
+                <a>Termos</a>
+                <a>Privacidade</a>
+                <a>Suporte</a>
+            </div>
+            <p class="footer-copy">© 2026 DSBet - Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+
+
+
+
+    <script src="Scr/global.js"></script>
+    <script src="Scr/virarCartas.js"></script>
+    <script src="Scr/sorteios.js"></script>
+    <script src="Scr/cartas.js"></script>
+    <script src="Scr/timer.js"></script>
+</body>
+
+</html>
