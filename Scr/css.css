@@ -1,18 +1,420 @@
-*{
+* {
     font-family: comic sans ms;
     user-select: none;
-    background-color: blue;
+
 }
-section{
+
+html {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
     display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    background: radial-gradient(circle at top, #4a000f, #0a0a0a);
+    box-shadow:
+        inset 0 0 5px #8b0000,
+        inset 0 0 10px #ff1a1a,
+        inset 0 0 20px #ff4d4d;
+}
+
+.fundo {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+
+    background-image: url(Assets/Cards/fundo.jpeg);
+    background-size: cover;
+    background-repeat: repeat-y;
+
+    animation: fundoSubindo 20s linear infinite;
+}
+
+@keyframes fundoSubindo {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 0 -1000px;
+    }
+}
+
+
+
+
+/* ===== HEADER ===== */
+.header {
+    background: radial-gradient(circle at top, #4a000f, #240404);
+    padding: 15px 30px;
+    height: 80px;
+    box-shadow:
+        0 0 5px #8b0000,
+        0 0 10px #ff1a1a,
+        0 0 20px #ff4d4d;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+/* CENTRALIZA SEM QUEBRAR LAYOUT */
+.titulo-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.titulo {
+    padding: 8px 25px;
+    border: 2px solid #d4af37;
+    border-radius: 10px;
+    background-color: #180204;
+    font-size: 32px;
+
+    background: linear-gradient(90deg, #fff3a0, #ffd700, #ffb300);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+
+    animation: brilhoTitulo 3s linear infinite;
+}
+
+/* ===== ANIMAÇÃO TITULO ===== */
+@keyframes brilhoTitulo {
+    from {
+        background-position: 0%;
+    }
+
+    to {
+        background-position: 200%;
+    }
+}
+
+.titulo::before,
+.titulo::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 2000px;
+    height: 10px;
+    transform: translateY(-50%);
+    background: radial-gradient(circle, #ffd700 4px, transparent 5px);
+    background-size: 30px 10px;
+    background-repeat: repeat-x;
+    filter: drop-shadow(0 0 5px #ffd700);
+    animation: bolinhasAndando 2s linear infinite;
+}
+
+.titulo::before {
+    right: 100%;
+    margin-right: 15px;
+}
+
+.titulo::after {
+    left: 100%;
+    margin-left: 15px;
+}
+
+@keyframes bolinhasAndando {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 30px 0;
+    }
+}
+
+
+/*Particulas que sobem*/
+.particles {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+
+.particle {
+    position: absolute;
+    animation: floatUp linear infinite;
+    opacity: 0;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(110vh) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: .7;
+    }
+
+    90% {
+        opacity: .7;
+    }
+
+    100% {
+        transform: translateY(-10vh) rotate(540deg);
+        opacity: 0;
+    }
+}
+
+section {
+    display: flex;
+    margin: 50px;
+}
+
+.login-wrapper {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+
+.login-card {
+    background-color: #180204;
+    border-radius: 16px;
+    padding: 50px 50px;
+    width: 420px;
+    box-shadow:
+        0 0 6px #6b0015,
+        0 0 12px #a00028,
+        0 0 30px #d11a3a;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-card::before {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    border-radius: 18px;
+    background: linear-gradient(var(--a), #fff176, #f5d547, #b89600, #fff9c4, #b89600, #f5d547);
+    animation: girarBordaLogin 4s linear infinite;
+    z-index: -1;
+}
+
+@property --a {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+}
+
+@keyframes girarBordaLogin {
+    to {
+        --a: 360deg;
+    }
+}
+
+.login-card::after {
+    content: "";
+    position: absolute;
+    inset: 3px;
+    border-radius: 14px;
+    background: #180204;
+    z-index: -1;
+}
+
+.login-titulo {
+    font-family: 'Great Vibes', cursive;
+    font-size: 40px;
+    text-align: center;
+    background: linear-gradient(90deg, #fff3a0, #ffd700, #ffb300, #fff3a0);
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: brilhoTitulo 3s linear infinite;
+    margin-bottom: 10px;
+}
+
+.login-label {
+    font-size: 14px;
+    color: #ffc800;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.login-input,
+.login-button {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    border: none;
+    box-sizing: border-box;
+}
+
+.login-input {
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid #a00028;
+    color: #fff;
+}
+
+.login-input:focus {
+    border-color: #ffd700;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    outline: none;
+}
+
+.login-input::placeholder {
+    color: #666;
+}
+
+.btn-entrar {
+    width: 100%;
+    background: linear-gradient(135deg, #8B6914 0%, #FFD700 35%, #FFF0A0 50%, #DAA520 65%, #8B6914 100%);
+    background-size: 250% 250%;
+    border: none;
+    border-radius: 12px;
+    padding: 18px;
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #0A0A0F;
+    letter-spacing: 3px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform .2s ease, box-shadow .2s ease;
+    animation: shimmer 3.5s ease infinite;
+}
+
+@keyframes shimmer {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.btn-entrar::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -70%;
+    width: 45%;
+    height: 200%;
+    background: rgba(255, 255, 255, .35);
+    transform: skewX(-22deg);
+    transition: left .7s ease;
+}
+
+.btn-entrar:hover::before {
+    left: 130%;
+}
+
+.btn-entrar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 35px rgba(255, 215, 0, .55), 0 0 10px #FFD700, 0 0 30px #FFD700, 0 0 60px #B8860B;
+    ;
+}
+
+.btn-entrar:active {
+    transform: scale(.97);
+}
+
+.login-separador {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #a00028, transparent);
+    border-radius: 2px;
 }
 
 .card {
     margin: 10px;
-    width: 150px;
-    height: 200px;
+    width: 110px;
+    height: 160px;
     background-image: url(Assets/Cards/Tras.png);
 }
-p, label, input, button {
+
+p,
+label,
+input,
+button {
     color: white;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    position: relative;
+    background: linear-gradient(to top, #000, #1a0000);
+    box-shadow: 0 0 5px #8b0000, 0 0 10px #ff1a1a, 0 0 20px #ff4d4d;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.footer::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 20px;
+    width: 100%;
+    height: 10px;
+    background-image: radial-gradient(circle, #ffd700 4px, transparent 5px);
+    background-size: 30px 10px;
+    background-repeat: repeat-x;
+    filter: drop-shadow(0 0 5px #ffd700);
+    animation: bolinhasAndando 2s linear infinite;
+}
+
+.footer-logo {
+    font-size: 28px;
+    background: linear-gradient(45deg, #ff004c, #ffcc00);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.footer-text {
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.footer-links {
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    color: #ffcc00;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.footer-links a:hover {
+    color: #fff;
+    text-shadow: 0 0 10px #ffcc00;
+}
+
+.footer-copy {
+    font-size: 12px;
+    color: #777;
 }
