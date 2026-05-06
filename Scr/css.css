@@ -13,3 +13,6 @@ section{
     height: 200px;
     background-image: url(Assets/Cards/Tras.png);
 }
+p, label, input, button {
+    color: white;
+}
