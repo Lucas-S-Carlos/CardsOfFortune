@@ -343,8 +343,8 @@ section {
 
 .card {
     margin: 10px;
-    width: 110px;
-    height: 160px;
+    width: 150px;
+    height: 200px;
     background-image: url(Assets/Cards/Tras.png);
 }
 
