@@ -1,4 +1,4 @@
-
+let podeIr = false
 
 let a1 = document.getElementById("a1")
 let a2 = document.getElementById("a2")
@@ -35,115 +35,156 @@ let Virada = {
 
 
 a1.addEventListener("click", () => {
-    if (Virada['a1'] == false) {
+    if ((Virada['a1'] == false) && (podeIr == true)) {
+         Virada['a1'] = true
         Sorteio(a1)
-        Virada['a1'] = true
     }
 });
 a2.addEventListener("click", () => {
-    if (Virada['a2'] == false) {
-        Sorteio(a2)
+    if ((Virada['a2'] == false) && (podeIr == true)) {
         Virada['a2'] = true
+        Sorteio(a2)
     }
 });
 a3.addEventListener("click", () => {
-    if (Virada['a3'] == false) {
-        Sorteio(a3)
+    if ((Virada['a3'] == false) && (podeIr == true)) {
         Virada['a3'] = true
+        Sorteio(a3)
     }
 });
 
 b1.addEventListener("click", () => {
-    if (Virada['b1'] == false) {
-        Sorteio(b1)
+    if ((Virada['b1'] == false) && (podeIr == true)) {
         Virada['b1'] = true
+        Sorteio(b1)
     }
 });
 b2.addEventListener("click", () => {
-    if (Virada['b2'] == false) {
-        Sorteio(b2)
-        Virada['b2'] = true
+    if ((Virada['b2'] == false) && (podeIr == true)) {
+       Virada['b2'] = true
+         Sorteio(b2)
     }
 });
 b3.addEventListener("click", () => {
-    if (Virada['b3'] == false) {
-        Sorteio(b3)
+    if ((Virada['b3'] == false)&& (podeIr == true)) {
         Virada['b3'] = true
+        Sorteio(b3)
     }
 });
 
 c1.addEventListener("click", () => {
-    if (Virada['c1'] == false) {
-        Sorteio(c1)
+    if ((Virada['c1'] == false)&& (podeIr == true)) {
         Virada['c1'] = true
+        Sorteio(c1)
     }
 });
 c2.addEventListener("click", () => {
-    if (Virada['c2'] == false) {
-        Sorteio(c2)
+    if ((Virada['c2'] == false)&& (podeIr == true)) {
         Virada['c2'] = true
+        Sorteio(c2)
     }
 });
 c3.addEventListener("click", () => {
-    if (Virada['c3'] == false) {
-        Sorteio(c3)
+    if ((Virada['c3'] == false)&& (podeIr == true)) {
         Virada['c3'] = true
+        Sorteio(c3)
     }
 });
 
 d1.addEventListener("click", () => {
-    if (Virada['d1'] == false) {
-        Sorteio(d1)
+    if ((Virada['d1'] == false)&& (podeIr == true)) {
         Virada['d1'] = true
+        Sorteio(d1)
     }
 });
 d2.addEventListener("click", () => {
-    if (Virada['d2'] == false) {
-        Sorteio(d2)
+    if ((Virada['d2'] == false)&& (podeIr == true)) {
         Virada['d2'] = true
+        Sorteio(d2)
     }
 });
 d3.addEventListener("click", () => {
-    if (Virada['d3'] == false) {
-        Sorteio(d3)
+    if ((Virada['d3'] == false)&& (podeIr == true)) {
         Virada['d3'] = true
+        Sorteio(d3)
     }
 });
 
 e1.addEventListener("click", () => {
-    if (Virada['e1'] == false) {
-        Sorteio(e1)
+    if ((Virada['e1'] == false)&& (podeIr == true)) {
         Virada['e1'] = true
+        Sorteio(e1)
     }
 });
 e2.addEventListener("click", () => {
-    if (Virada['e2'] == false) {
-        Sorteio(e2)
+    if ((Virada['e2'] == false)&& (podeIr == true)) {
         Virada['e2'] = true
+        Sorteio(e2)
     }
 });
 e3.addEventListener("click", () => {
-    if (Virada['e3'] == false) {
-        Sorteio(e3)
+    if ((Virada['e3'] == false)&& (podeIr == true)) {
         Virada['e3'] = true
+        Sorteio(e3)
     }
 });
 
 f1.addEventListener("click", () => {
-    if (Virada['f1'] == false) {
-        Sorteio(f1)
+    if ((Virada['f1'] == false)&& (podeIr == true)) {
         Virada['f1'] = true
+        Sorteio(f1)
     }
 });
 f2.addEventListener("click", () => {
-    if (Virada['f2'] == false) {
-        Sorteio(f2)
+    if ((Virada['f2'] == false)&& (podeIr == true)) {
         Virada['f2'] = true
+        Sorteio(f2)
     }
 });
 f3.addEventListener("click", () => {
-    if (Virada['f3'] == false) {
-        Sorteio(f3)
-        Virada['f3'] = true
+    if ((Virada['f3'] == false)&& (podeIr == true)) {
+       Virada['f3'] = true
+         Sorteio(f3)
     }
 });
+
+let i = 0;
+function virarTudo(){
+    if (Virada['a1'] == false){
+        SorteioFake(a1)
+    }  if (Virada['a2'] == false){
+        Sorteio(a2)
+    }  if (Virada['a3'] == false){
+        SorteioFake(a3)
+    }  if (Virada['b1'] == false){
+        SorteioFake(b1)
+    }  if (Virada['b2'] == false){
+        SorteioFake(b2)
+    } if (Virada['b3'] == false){
+        SorteioFake(b3)
+    }  if (Virada['c1'] == false){
+        SorteioFake(c1)
+    }  if (Virada['c2'] == false){
+        SorteioFake(c2)
+    } if (Virada['c3'] == false){
+        SorteioFake(c3)
+    }  if (Virada['d1'] == false){
+        SorteioFake(d1)
+    }  if (Virada['d2'] == false){
+        SorteioFake(d2)
+    } if (Virada['d3'] == false){
+        SorteioFake(d3)
+    }  if (Virada['e1'] == false){
+        SorteioFake(e1)
+    }  if (Virada['e2'] == false){
+        SorteioFake(e2)
+    } if (Virada['e3'] == false){
+        SorteioFake(e3)
+    }  if (Virada['f1'] == false){
+        SorteioFake(f1)
+    }  if (Virada['f2'] == false){
+        SorteioFake(f2)
+    } if (Virada['f3'] == false){
+        SorteioFake(f3)
+    } 
+};
