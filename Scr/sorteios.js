@@ -26,46 +26,46 @@ function Sorteio(carta){
 
 function Sorte1(sorte, carta, valorDaAposta){
 
-    if (sorte <= 20){                                                       // 1 até 40
+    if (sorte <= 20){                                                       // 1 até 20
         rara(carta, valorDaAposta)
     } 
-    else if((sorte > 20) && (sorte <= 60)){                                 //41 até 80
+    else if((sorte > 20) && (sorte <= 50)){                                 //21 até 50
         incomum(carta, valorDaAposta)
     } 
-    else if(sorte > 60){                                                    //81 até 100
+    else if((sorte > 50) && (sorte <= 80)){                                 //51 até 80
         comum(carta, valorDaAposta)
     } 
+    else if(sorte > 80){
+        multiplicador(carta, valorDaAposta)
+    }
 }
 
 function Sorte2(sorte, carta, valorDaAposta){
 
-    if (sorte <= 10){                                                       // 1 até 20
+    if (sorte <= 10){                                                       // 1 até 10
         rara(carta, valorDaAposta)
     } 
-    else if((sorte > 10) && (sorte <= 30)){                                 //21 até 50
+    else if((sorte > 10) && (sorte <= 30)){                                 //11 até 30
         incomum(carta, valorDaAposta)
 
     } 
-    else if((sorte > 30) && (sorte <= 70)){                                 //51 até 70
+    else if((sorte > 30) && (sorte <= 70)){                                 //31 até 70
         comum(carta, valorDaAposta)
     } 
     else if((sorte > 70) && (sorte <= 80)){                                 //71 até 80
         bomba(carta, valorDaAposta)
     } 
-    else if((sorte > 80) && (sorte <= 90)){                                 //81 até 90
-        duplicador(carta)
-    } 
-    else if(sorte > 90) {                                                   //91 até 100
+    else if(sorte > 80) {                                                   //81 até 100
         divididor(carta)
     } 
 }
 
 function Sorte3(sorte, carta, valorDaAposta){
 
-    if (sorte <= 3){                                                       // 1 até 7
+    if (sorte <= 3){                                                       // 1 até 3
         rara(carta, valorDaAposta)
     } 
-    else if((sorte > 3) && (sorte <= 17)){                                 //8 até 17
+    else if((sorte > 3) && (sorte <= 17)){                                 //4 até 17
         incomum(carta, valorDaAposta)
     } 
     else if((sorte > 17) && (sorte <= 37)){                                 //18 até 37
@@ -84,22 +84,22 @@ function Sorte3(sorte, carta, valorDaAposta){
 
 function sorteResto(sorte, carta, valorDaAposta){
     console.log("sorteresto")
-    if (sorte <= 3){                                                       // 1 até 7
+    if (sorte <= 3){                                                       // 1 até 3
         rara(carta, valorDaAposta)
     } 
-    else if((sorte > 3 && (sorte <= 13))){                                 //8 até 17
+    else if((sorte > 3 && (sorte <= 13))){                                 //4 até 13
         incomum(carta, valorDaAposta)
     } 
-    else if((sorte > 13) && (sorte <= 30)){                                 //18 até 37
+    else if((sorte > 13) && (sorte <= 30)){                                 //14 até 30
         comum(carta, valorDaAposta)
     } 
-    else if((sorte > 30) && (sorte <= 80)){                                 //38 até 67
+    else if((sorte > 30) && (sorte <= 80)){                                 //31 até 80
         bomba(carta, valorDaAposta)
     } 
-    else if((sorte > 80) && (sorte <= 85)){                                 //68 até 70
+    else if((sorte > 80) && (sorte <= 85)){                                 //81 até 85
         duplicador(carta)
     } 
-    else if(sorte > 85) {                                                   //71 até 100
+    else if(sorte > 85) {                                                   //86 até 100
         divididor(carta)
     } 
 }
