@@ -350,9 +350,11 @@ section {
 
 p,
 label,
-input,
-button {
+input{
     color: white;
+}
+button {
+    color: black;
 }
 
 /* ===== FOOTER ===== */
