@@ -5,23 +5,23 @@ let ganhoEL = document.getElementById("ganho");
 function rara(carta, valorDaAposta){
     carta.style.backgroundImage = 'url(Scr/Assets/Cards/Rara.png)';
        
-        valorGanho = valorGanho + (3 * valorDaAposta);
+        valorGanho = valorGanho + (2 * valorDaAposta);
 
-        ganhoEL.innerHTML = `Triplicou! Ganhou ${valorGanho}`;
+        ganhoEL.innerHTML = `Duplicou! Ganhou ${valorGanho}`;
 }
 function incomum(carta, valorDaAposta){
     carta.style.backgroundImage = "url(Scr/Assets/Cards/Incomum.png)";
 
-    valorGanho = valorGanho + (2 * valorDaAposta)
+    valorGanho = valorGanho + (1 * valorDaAposta)
 
-    ganhoEL.innerHTML = `Duplicou! Ganhou ${valorGanho}`; 
+    ganhoEL.innerHTML = `Se pagou! Recebeu ${valorGanho}`; 
 }
 function comum(carta, valorDaAposta){ 
     carta.style.backgroundImage = "url(Scr/Assets/Cards/Comum.png)";
 
-    valorGanho = valorGanho + valorDaAposta
+    valorGanho = valorGanho
 
-    ganhoEL.innerHTML = `Se pagou! Recebeu ${valorGanho}`;
+    ganhoEL.innerHTML = `Não mudou nada! Você continua com ${valorGanho}`;
 }
 
 
@@ -61,11 +61,12 @@ function duplicador(carta){
 
 function divididor(carta){
     carta.style.backgroundImage = "url(Scr/Assets/Cards/Faca.png)";
-    ganhoEL.innerHTML = `Assalto!!! Te roubaram ${parseInt((valorGanho / 10) / 4)*10*3}!`;
+
+    const roubo = valorGanho
 
     valorGanho = parseInt((valorGanho / 10) / 4)*10
 
-    ganhoEL.innerHTML = ganhoEL.innerHTML + ` Lhe restou ${valorGanho}`
+    ganhoEL.innerHTML = `Assalto!!! Te roubaram ${roubo - valorGanho}! Lhe restou ${valorGanho}`;
 
     
 
