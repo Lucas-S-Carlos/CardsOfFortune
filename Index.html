@@ -1,18 +1,78 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Scr/css.css">
     <title>Cadastro</title>
-    
-</head>
-<body>
-    <h1 id="">Cadastre seus dados</h1>
-        <label for="nome">Digite sue nome completo: <input p id="nome" type="text" placeholder="Ex.: Maria Barbosa"></label>
-        <label for="nome">Digite seu saldo atual: <input type="number" min="10" step="10" id="saldo" placeholder="Ex.: 10, 20, 100"></label>
-        <button onclick="cadastrar ()"  >Continuar</button>
 
-        <script src="Scr/cadastro.js"></script>
+</head>
+
+<body>
+    <div class="fundo"></div>
+
+    <header class="header">
+        <nav class="nav">
+            <div class="titulo-container">
+                <h1 class="titulo">Cards of Fortune</h1>
+            </div>
+        </nav>
+    </header>
+
+    <div class="particles" id="pts"></div>
+
+    <div class="login-wrapper">
+        <div class="login-card">
+            <h2 class="login-titulo">Bem-vindo!</h2>
+
+            <div class="login-separador"></div>
+
+            <div>
+                <label class="login-label" for="nome">Nome completo</label>
+                <input class="login-input" id="nome" type="text" placeholder="Ex.: Maria Barbosa" />
+            </div>
+
+            <div>
+                <label class="login-label" for="saldo">Saldo inicial ($)</label>
+                <input class="login-input" type="number" id="saldo" placeholder="Ex.: 100, 500, 1000" />
+            </div>
+
+            <div class="login-separador"></div>
+
+            <button class="btn-entrar" onclick="cadastrar()">JOGAR AGORA</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <h2 class="footer-logo">CARDS OF FORTUNE</h2>
+            <p class="footer-text">
+                Projeto desenvolvido exclusivamente para fins educacionais. Jogue sem responsabilidade.
+            </p>
+            <div class="footer-links">
+                <a>Termos</a>
+                <a>Jeff é um grande professor</a>
+                <a>Suporte</a>
+            </div>
+            <p class="footer-copy">© 2026 DSBet - Todos os direitos reservados</p>
+        </div>
+    </footer>
+    <script src="Scr/cadastro.js"></script>
+    <script>
+        const syms = ['🃏', '💰', '⭐', '💎', '🎰', '♠', '♥', '♦', '♣', '🏆', '🎴'];
+        const pts = document.getElementById('pts');
+        for (let i = 0; i < 20; i++) {
+            const el = document.createElement('div');
+            el.className = 'particle';
+            el.textContent = syms[Math.floor(Math.random() * syms.length)];
+            el.style.left = (Math.random() * 90) + 'vw';
+            el.style.animationDuration = (9 + Math.random() * 14) + 's';
+            el.style.animationDelay = (Math.random() * 18) + 's';
+            el.style.fontSize = (13 + Math.random() * 18) + 'px';
+            pts.appendChild(el);
+        }
+    </script>
 </body>
+
 </html>

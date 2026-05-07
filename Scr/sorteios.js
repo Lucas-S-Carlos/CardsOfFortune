@@ -32,12 +32,10 @@ function Sorte1(sorte, carta, valorDaAposta){
     else if((sorte > 20) && (sorte <= 50)){                                 //21 até 50
         incomum(carta, valorDaAposta)
     } 
-    else if((sorte > 50) && (sorte <= 80)){                                 //51 até 80
+    else if(sorte > 50){                                                    //51 até 80
         comum(carta, valorDaAposta)
     } 
-    else if(sorte > 80){
-        multiplicador(carta, valorDaAposta)
-    }
+
 }
 
 function Sorte2(sorte, carta, valorDaAposta){
@@ -54,8 +52,10 @@ function Sorte2(sorte, carta, valorDaAposta){
     } 
     else if((sorte > 70) && (sorte <= 80)){                                 //71 até 80
         bomba(carta, valorDaAposta)
+    } else if((sorte > 80) && (sorte <= 87)){                               //81 até 87
+        duplicador(carta)
     } 
-    else if(sorte > 80) {                                                   //81 até 100
+    else if(sorte > 87) {                                                   //88 até 100
         divididor(carta)
     } 
 }
