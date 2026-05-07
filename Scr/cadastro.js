@@ -1,9 +1,12 @@
 const telaCadastro = document.getElementById("Cadastro");
 
+
 const btnCad = document.getElementById("btnCad");
 
 const impNome = document.getElementById("nome");
 const impSaldo = document.getElementById("saldo");
+
+
 
 impNome.style.borderColor = "white";
 impSaldo.style.borderColor = "white";

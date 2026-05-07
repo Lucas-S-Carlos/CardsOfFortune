@@ -85,7 +85,7 @@ function continuar (result) {
 }
 
 function exibirModal(){
-    resultado.innerHTML = `Você ganhou ${valorGanho} fichas! Você tem atualmente ${parseInt(saldoAtual.innerText) + parseInt(valorGanho)} fichas de saldo.`
+    resultado.innerHTML = `Você ganhou ${valorGanho} fichas! Você tem atualmente ${parseInt(saldoAtual.innerText) + parseInt(valorGanho)} fixas de saldo.`
     coletaModal.showModal()
 };
 
