@@ -17,7 +17,7 @@ function cadastrar () {
   let saldo = parseInt(document.getElementById("saldo").value);
   
 
-  if ((nome === "") || ((isNaN(saldo) === true || (saldo < 10)))) {
+  if ((nome === "") || ((isNaN(saldo) === true))) {
     impNome.style.borderColor = "white";
     impSaldo.style.borderColor = "white";
 
@@ -25,15 +25,10 @@ function cadastrar () {
       impNome.style.borderColor = "red";
       alert("Preencha o nome.");
     }
-    if ((isNaN(saldo) === true)){
+    if (isNaN(saldo) === true){
       impSaldo.style.borderColor = "red";
       alert("Preencha o saldo atual corretamente.");
     }
-    if (saldo < 10){
-      impSaldo.style.borderColor = "red";
-      alert("O saldo atual deve ser maior que 10.");
-    }
-
   } else {
     console.log (saldo)
     localStorage.setItem("saldo", saldo)
