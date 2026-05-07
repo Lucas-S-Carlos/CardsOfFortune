@@ -21,7 +21,7 @@ function comum(carta, valorDaAposta){
 
     valorGanho = valorGanho
 
-    ganhoEL.innerHTML = `Não mudou nada! Você continua com ${valorGanho}`;
+    ganhoEL.innerHTML = `Você não ganhou nem perdeu nada.`;
 }
 
 
