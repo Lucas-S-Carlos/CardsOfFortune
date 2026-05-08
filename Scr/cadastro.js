@@ -12,7 +12,7 @@ impNome.style.borderColor = "white";
 impSaldo.style.borderColor = "white";
 
 function cadastrar () {
-  console.log(  'sim')
+
   let nome = document.getElementById("nome").value;
   let saldo = parseInt(document.getElementById("saldo").value);
   
@@ -35,11 +35,10 @@ function cadastrar () {
     }
 
   } else {
-    console.log (saldo)
+
     localStorage.setItem("saldo", saldo)
 
 
-    console.log(isNaN(saldo));
     window.location.href = "jogo.html";
 
   }

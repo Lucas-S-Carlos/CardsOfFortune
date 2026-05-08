@@ -9,7 +9,6 @@ const aMais = document.getElementById("mais")
 const aMenos = document.getElementById("menos")
 
 let saldoAtual = document.getElementById("saldoAtual")
-console.log(localStorage.getItem('saldo'))
 saldoAtual.innerHTML= localStorage.getItem('saldo');
 
 let valorGanho = 0
@@ -91,7 +90,6 @@ function exibirModal(){
 
 
 function poder(){
-    console.log(saldoPos, parseInt(document.getElementById("entrada").value))
     if ((parseInt(document.getElementById("entrada").value) == 0) || (parseInt(document.getElementById("entrada").value) > parseInt(saldoAtual.innerText))) {
         alert('O valor da aposta não pode ser maior que o saldo nem 0!')
         podeIr = false

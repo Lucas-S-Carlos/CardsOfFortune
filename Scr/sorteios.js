@@ -1,25 +1,59 @@
 let CartasViradas = 0
 let ListaDeCartas = []
 
+let ValorDoSorteio = 0
+
+
+let morteCerta = false;
+
 const coletar = document.getElementById("coletar")
 
 function Sorteio(carta){
+    
+
+
     let valorDaAposta = parseInt(document.getElementById("entrada").value)
-
-
     let sorte = (Math.floor(Math.random() * 100) + 1) //gera um número de 1 até 100
-
-
-    if (CartasViradas == 0) {
-        Sorte1(sorte, carta, valorDaAposta)
-    } else if (CartasViradas == 1) {
-        Sorte2(sorte, carta, valorDaAposta)
-    } else if (CartasViradas == 2) {
-        Sorte3(sorte, carta, valorDaAposta)
+    if (CartasViradas == 3){
         coletar.disabled=false
+    }
+
+    let ValorDoSorteio = CartasViradas
+
+    
+
+    if (valorDaAposta >= 50) {
+        ValorDoSorteio = ValorDoSorteio + 1;
+    } if (valorDaAposta >= 80) {
+        ValorDoSorteio = ValorDoSorteio + 1;
+    } if (valorDaAposta >= 130) {
+        ValorDoSorteio = ValorDoSorteio + 1;
+    } if (valorDaAposta >= 200){
+        morteCerta = true
+    }
+
+
+
+
+    if (morteCerta == true) {
+        morte(sorte, carta, valorDaAposta)
+        console.log("morte")
+    } else 
+    if (ValorDoSorteio == 0) {
+        Sorte1(sorte, carta, valorDaAposta)
+        console.log("sorte1")
+    } else if (ValorDoSorteio == 1) {
+        Sorte2(sorte, carta, valorDaAposta)
+        console.log("sorte2")
+    } else if (ValorDoSorteio == 2) {
+        Sorte3(sorte, carta, valorDaAposta)
+        console.log("sorte3")
     } else {
         sorteResto(sorte, carta, valorDaAposta)
+        console.log("sorteresto")
     }
+
+
 
     CartasViradas = CartasViradas + 1
 }
@@ -102,6 +136,11 @@ function sorteResto(sorte, carta, valorDaAposta){
     else if(sorte > 85) {                                                   //86 até 100
         divididor(carta)
     } 
+}
+
+function morte(sorte, carta, valorDaAposta){                            
+        bomba(carta, valorDaAposta)
+ 
 }
 
 function SorteioFake(carta){
