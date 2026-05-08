@@ -2,14 +2,19 @@
 <html lang="pt-br">
 
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Scr/jogo.css">
+    <link rel="stylesheet" href="Scr/css.css">
     <title>CARDS</title>
 </head>
 
 <body>
     <div class="fundo"></div>
+
+    <div class="particles" id="pts"></div>
 
     <header class="header">
         <nav class="nav">
@@ -19,10 +24,57 @@
             <a href="index.html" class="link-saldo">Sair</a>
         </nav>
     </header>
-     <label>Tempo restante:
-        <div id="timer"> </div>
+
+     <section class="caixas-ganho">
+
+      <div class="logo2">
+        <img src="Scr/Assets/imagens/logo-das-cartas.png" />
+      </div>
+
+      <div class="logo">
+        <img src="Scr/Assets/imagens/dsbet.png" />
+      </div>
+    </section>
+
+    <div class="caixa-saldo">
+        <h1>Saldo</h1>
+        <h2 id="saldoAtual"> 0</h2>
+      </div>
+    
+
+      <div class="caixa-temporizador" id="timer">
+        
+      </div>
+      
+      <div class="container">
+       <div class="parte_aposta">
+     
+         <div class="caixa-aposta">
+           <h1>Aposta</h1>
+           <h2 id="entrada">0</h2>
+         </div>
+     
+         <button class="mais" id="mais" onclick="adicionar()">+</button>
+         <button class="menos" id="menos" onclick="remover()">-</button>
+        
+        </div>
+       </div>
+
+        <div class="botao_aposta">
+          <div class="brilho"> 
+           <button class="pode" id="pode" onclick="poder()">Apostar</button>
+          </div> 
+
+         <div class="batao_coletar">
+            <button class="coletar" disabled=true id="coletar" onclick="exibirModal()">Coletar ganhos</button>
+         </div>
+        </div>
+    
+      
 
     <section>
+
+     
         <div>
             <div class="card" id="a1"></div>
             <div class="card" id="a2"></div>
@@ -58,26 +110,35 @@
             <div class="card" id="f2"></div>
             <div class="card" id="f3"></div>
         </div>
+    
+      
     </section>
-    <label>Aposta: <input disabled type="number" id="entrada"></input> </label>
-    <button id="mais" onclick="adicionar()">+10</button>
-    <button id="menos" onclick="remover()">-10</button>
-    <button id="pode" onclick="poder()">Apostar</button>
-    <button disabled=true id="coletar" onclick="exibirModal()">Coletar ganhos</button>
-    <p>Saldo Atual:</p>
-    <p id="saldoAtual"></p>
 
 
+    
+       <p id="ganho"></p>
 
-    <p id="ganho"></p>
+        <div class="formulario-dois">
+            <div class="anuncio-container">
+              <img class="anuncio ativo" src="Scr/Assets/imagens/propagandaeslote.jpeg" />
+              <img class="anuncio" src="Scr/Assets/imagens/PropagandaMines(2).png" />
+              <img class="anuncio" src="Scr/Assets/imagens/propagandacartas.jpeg" />
+            </div>
+        </div>
+    
+    <div id="gif" style="display:none;">
+      <img src="Scr/Assets/imagens/bum.gif">
+    </div>
 
-    <dialog id="perdeModal">
+    <dialog class="perdeModal" id="perdeModal">
         <h1>Perdeu tudo</h1>
+         
         <button onclick="continuar('perdeu')">Tente novamente</button>
         <button onclick="reload()">Desistir</button>
     </dialog>
-    <dialog id="gameOverModal">
+    <dialog id="gameOverModal">]
         <h1>Perdeu tudo</h1>
+        <img class="bum" src="Scr/Assets/imagens/bum.gif" />
         <button onclick="reload()">Desistir</button>
     </dialog>
 
@@ -104,8 +165,22 @@
         </div>
     </footer>
 
-
-
+       
+      <script>
+        const syms = ['🃏', '💰', '⭐', '💎', '🎰', '♠', '♥', '♦', '♣', '🏆', '🎴'];
+        const pts = document.getElementById('pts');
+        for (let i = 0; i < 20; i++) {
+            const el = document.createElement('div');
+            el.className = 'particle';
+            el.textContent = syms[Math.floor(Math.random() * syms.length)];
+            el.style.left = (Math.random() * 90) + 'vw';
+            el.style.animationDuration = (9 + Math.random() * 14) + 's';
+            el.style.animationDelay = (Math.random() * 18) + 's';
+            el.style.fontSize = (13 + Math.random() * 18) + 'px';
+            pts.appendChild(el);
+        }
+    </script>
+    
 
 
     <script src="Scr/global.js"></script>
@@ -113,6 +188,7 @@
     <script src="Scr/sorteios.js"></script>
     <script src="Scr/cartas.js"></script>
     <script src="Scr/timer.js"></script>
+    <script src="Scr/anuncio.js"></script>
 </body>
 
 </html>
