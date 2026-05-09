@@ -153,7 +153,7 @@ function virarTudo(){
     if (Virada['a1'] == false){
         SorteioFake(a1)
     }  if (Virada['a2'] == false){
-        Sorteio(a2)
+        SorteioFake(a2)
     }  if (Virada['a3'] == false){
         SorteioFake(a3)
     }  if (Virada['b1'] == false){
