@@ -882,3 +882,20 @@ input {
     0 0 24px  #ff4d4d;
 }
 
+.ganho{
+    position: absolute;
+    left: 860px;
+    top: 150px;
+    font-family: 'Great Vibes', cursive;
+    font-size: 40px;
+    text-align: center;
+    background: linear-gradient(90deg, #fff3a0, #ffd700, #ffb300, #fff3a0);
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: brilhoTitulo 3s linear infinite;
+    margin-bottom: 10px;
+    padding: 10px;
+}
