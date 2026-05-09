@@ -9,7 +9,7 @@ const aMais = document.getElementById("mais")
 const aMenos = document.getElementById("menos")
 
 let saldoAtual = document.getElementById("saldoAtual")
-console.log(localStorage.getItem('saldo'))
+
 saldoAtual.innerHTML= localStorage.getItem('saldo');
 
 let valorGanho = 0
@@ -17,16 +17,13 @@ let saldoPos = 0
 
 
 function adicionar (){
-    document.getElementById("entrada").value = parseInt(document.getElementById("entrada").value) + 10
-}
-function adicionar (){
-    document.getElementById("entrada").value = parseInt(document.getElementById("entrada").value) + 10
+    document.getElementById("entrada").innerHTML = parseInt(document.getElementById("entrada").innerText) + 10
 }
 function remover (){
-    if (parseInt(document.getElementById("entrada").value) == 0) {
+    if (parseInt(document.getElementById("entrada").innerText) == 0) {
         document.getElementById("entrada").value = 0
     } else {
-        document.getElementById("entrada").value = parseInt(document.getElementById("entrada").value) - 10
+        document.getElementById("entrada").innerHTML = parseInt(document.getElementById("entrada").innerText) - 10
     }
 }
 
@@ -42,7 +39,7 @@ function reset() {
     aMais.disabled=false
     aMenos.disabled=false
 
-    document.getElementById("entrada").value = 0
+    document.getElementById("entrada").innerHTML = 0
     Virada = {
     'a1': false, 'a2': false, 'a3': false, 
     'b1': false, 'b2': false, 'b3': false, 
@@ -68,7 +65,9 @@ function continuar (result) {
 
 
     if (result === 'perdeu') {
-        const valor =  parseInt(document.getElementById("entrada").value)
+        const valor =  parseInt(document.getElementById("entrada").innerText)
+        console.log(saldoAtual.innerText, valor)
+        console.log(parseInt(saldoAtual.innerText) - valor)
         saldoAtual.innerHTML = parseInt(saldoAtual.innerText) - valor
        
        perdeModal.close()
@@ -85,14 +84,14 @@ function continuar (result) {
 }
 
 function exibirModal(){
+    console.log("exibe")
     resultado.innerHTML = `Você ganhou ${valorGanho} fichas! Você tem atualmente ${parseInt(saldoAtual.innerText) + parseInt(valorGanho)} fixas de saldo.`
     coletaModal.showModal()
 };
 
 
 function poder(){
-    console.log(saldoPos, parseInt(document.getElementById("entrada").value))
-    if ((parseInt(document.getElementById("entrada").value) == 0) || (parseInt(document.getElementById("entrada").value) > parseInt(saldoAtual.innerText))) {
+    if ((parseInt(document.getElementById("entrada").innerText) == 0) || (parseInt(document.getElementById("entrada").innerText) > parseInt(saldoAtual.innerText))) {
         alert('O valor da aposta não pode ser maior que o saldo nem 0!')
         podeIr = false
     } else {

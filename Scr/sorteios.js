@@ -4,7 +4,8 @@ let ListaDeCartas = []
 const coletar = document.getElementById("coletar")
 
 function Sorteio(carta){
-    let valorDaAposta = parseInt(document.getElementById("entrada").value)
+    let valorDaAposta = parseInt(document.getElementById("entrada").innerText)
+    let valorDaApostaHTML = document.getElementById("entrada").innerHTML
 
 
     let sorte = (Math.floor(Math.random() * 100) + 1) //gera um número de 1 até 100
@@ -26,27 +27,27 @@ function Sorteio(carta){
 
 function Sorte1(sorte, carta, valorDaAposta){
 
-    if (sorte <= 20){                                                       // 1 até 40
+    if (sorte <= 40){                                                       // 1 até 40
         rara(carta, valorDaAposta)
     } 
-    else if((sorte > 20) && (sorte <= 60)){                                 //41 até 80
+    else if((sorte > 40) && (sorte <= 80)){                                 //41 até 80
         incomum(carta, valorDaAposta)
     } 
-    else if(sorte > 60){                                                    //81 até 100
+    else if(sorte > 80){                                                    //81 até 100
         comum(carta, valorDaAposta)
     } 
 }
 
 function Sorte2(sorte, carta, valorDaAposta){
 
-    if (sorte <= 10){                                                       // 1 até 20
+    if (sorte <= 20){                                                       // 1 até 20
         rara(carta, valorDaAposta)
     } 
-    else if((sorte > 10) && (sorte <= 30)){                                 //21 até 50
+    else if((sorte > 20) && (sorte <= 50)){                                 //21 até 50
         incomum(carta, valorDaAposta)
 
     } 
-    else if((sorte > 30) && (sorte <= 70)){                                 //51 até 70
+    else if((sorte > 50) && (sorte <= 70)){                                 //51 até 70
         comum(carta, valorDaAposta)
     } 
     else if((sorte > 70) && (sorte <= 80)){                                 //71 até 80
@@ -62,10 +63,10 @@ function Sorte2(sorte, carta, valorDaAposta){
 
 function Sorte3(sorte, carta, valorDaAposta){
 
-    if (sorte <= 3){                                                       // 1 até 7
+    if (sorte <= 7){                                                       // 1 até 7
         rara(carta, valorDaAposta)
     } 
-    else if((sorte > 3) && (sorte <= 17)){                                 //8 até 17
+    else if((sorte > 7) && (sorte <= 17)){                                 //8 até 17
         incomum(carta, valorDaAposta)
     } 
     else if((sorte > 17) && (sorte <= 37)){                                 //18 até 37
@@ -83,7 +84,6 @@ function Sorte3(sorte, carta, valorDaAposta){
 }
 
 function sorteResto(sorte, carta, valorDaAposta){
-    console.log("sorteresto")
     if (sorte <= 3){                                                       // 1 até 7
         rara(carta, valorDaAposta)
     } 
