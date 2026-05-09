@@ -1,3 +1,5 @@
+let valorModalTempo = document.getElementById("tempoModaltxt");
+
 
     function startTimer(duration, display) {
 
@@ -14,20 +16,17 @@
         display.textContent = minutes + ":" + seconds;
 
         if (--timer < 0) {
-            timer = duration;
-            ganhoEL.innerHTML = `Acabou seu tempo!`;
-            perdeModal.showModal()
-            alert("Seu tempo acabou! Próximo jogador.");
 
-            const modal = document.getElementById("modal")
+
+            timer = duration;
+            valorModalTempo.innerHTML = `Seu tempo acabou! Próximo jogador. O seu saldo foi ${parseInt(saldoAtual.innerText)}.`;
+
+            const modal = document.getElementById("tempoModal")
 
 
             valorGanho = 0
-
-            ganhoEL.innerHTML = `Perdeu tudo!`;
             modal.showModal()
 
-            location.reload(true);
 
         }
 
@@ -37,7 +36,7 @@
 
 
     window.onload = function () {
-        var duration = 60 * 3;
+        var duration =  60 * 3;
         var display = document.querySelector("#timer");
 
         startTimer(duration, display);

@@ -65,11 +65,11 @@
            <button class="pode" id="pode" onclick="poder()">Apostar</button>
           </div> 
 
-         <div class="batao_coletar">
+         
+        </div>
+        <div class="batao_coletar">
             <button class="coletar" disabled=true id="coletar" onclick="exibirModal(); console.log('clique');">Coletar ganhos</button>
          </div>
-        </div>
-    
       
 
     <section>
@@ -130,25 +130,30 @@
       <img src="Scr/Assets/imagens/bum.gif">
     </div>
 
-    <dialog class="perdeModal" id="perdeModal">
+    <dialog class="perdeModal"  id="perdeModal">
         <h1>Perdeu tudo</h1>
          
         <button onclick="continuar('perdeu')">Tente novamente</button>
         <button onclick="reload()">Desistir</button>
     </dialog>
-    <dialog id="gameOverModal">]
+    <dialog class="perdeModal"  id="gameOverModal">]
         <h1>Perdeu tudo</h1>
         <img class="bum" src="Scr/Assets/imagens/bum.gif" />
         <button onclick="reload()">Desistir</button>
     </dialog>
 
 
-    <dialog id="coletaModal">
+    <dialog class="perdeModal" id="coletaModal">
         <h1 id="valorModal"></h1>
         <button onclick="continuar('ganhou')">Continue jogando</button>
         <button onclick="reload()">Sair</button>
-
     </dialog>
+    <dialog class="perdeModal" id="tempoModal">
+        <h1 id="tempoModaltxt"></h1>
+        <button onclick="reload()">Sair</button>
+    </dialog>
+
+
     <footer class="footer">
         <div class="footer-content">
             <h2 class="footer-logo">CARDS OF FORTUNE</h2>
