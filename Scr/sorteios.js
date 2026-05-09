@@ -12,7 +12,8 @@ function Sorteio(carta){
     
 
 
-    let valorDaAposta = parseInt(document.getElementById("entrada").value)
+    let valorDaAposta = parseInt(document.getElementById("entrada").innerText)
+    let valorDaApostaHTML = document.getElementById("entrada").innerHTML
     let sorte = (Math.floor(Math.random() * 100) + 1) //gera um número de 1 até 100
 
 

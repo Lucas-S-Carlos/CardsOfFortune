@@ -12,7 +12,6 @@ impNome.style.borderColor = "white";
 impSaldo.style.borderColor = "white";
 
 function cadastrar () {
-
   let nome = document.getElementById("nome").value;
   let saldo = parseInt(document.getElementById("saldo").value);
   
