@@ -61,18 +61,19 @@ function reset() {
 
 }
 
+let perdeTexto = document.getElementById("textoPerde")
 
 function continuar (result) {
-
-  
 
 
     if (result === 'perdeu') {
         const valor =  parseInt(document.getElementById("entrada").innerText)
-        console.log(saldoAtual.innerText, valor)
-        console.log(parseInt(saldoAtual.innerText) - valor)
-        saldoAtual.innerHTML = parseInt(saldoAtual.innerText) - valor
+        console.log("aaaaa")
        
+        saldoAtual.innerHTML = parseInt(saldoAtual.innerText) - valor
+         console.log(perdeTexto.innerText + ' Mas ainda resta ' + saldoAtual.innerText + '! Jpgue Novamente!')
+       perdeTexto.innerHTML = perdeTexto.innerText + ` Mas ainda resta ${saldoAtual.innerText}! Jogue Novamente!`
+        
        perdeModal.close()
        reset()
        

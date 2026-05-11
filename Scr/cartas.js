@@ -61,7 +61,7 @@ function bomba(carta, valorDaAposta){
         overModal.showModal()
     } else {
         // saldoAtual.innerHTML = parseInt(saldoAtual.value) - valorDaAposta
-
+        perdeTexto.innerHTML = perdeTexto.innerText + ` Mas ainda resta ${parseInt(saldoAtual.innerText) - 10}! Jogue Novamente!`
         perdeModal.showModal()
     }
 
