@@ -36,7 +36,7 @@ let valorModalTempo = document.getElementById("tempoModaltxt");
 
 
     window.onload = function () {
-        var duration =  60 * 3;
+        var duration =  10;
         var display = document.querySelector("#timer");
 
         startTimer(duration, display);
