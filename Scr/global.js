@@ -49,6 +49,7 @@ function reset() {
     'f1': false, 'f2': false, 'f3': false}   
 
         coletar.disabled=true
+        coletar.classList.remove("brilho")
 
 
     ganhoEL.innerHTML = ``; 

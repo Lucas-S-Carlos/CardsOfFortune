@@ -50,7 +50,7 @@ body {
 .header {
     background: radial-gradient(circle at top, #4a000f, #240404);
     padding: 8px 30px;
-    height: 60px;
+    height: 70px;
     box-shadow:
         0 0 5px #8b0000,
         0 0 10px #ff1a1a,
@@ -81,7 +81,7 @@ body {
     border: 2px solid #d4af37;
     border-radius: 10px;
     background-color: #180204;
-    font-size: 32px;
+    font-size: 40px;
     font-family: 'Great Vibes', cursive !important;
     background: linear-gradient(90deg, #fff3a0, #ffd700, #ffb300);
     background-clip: text;
@@ -177,7 +177,7 @@ body {
 section {
     display: flex;
     margin-left: 620px;
-    margin-top: 90px;
+    margin-top: 100px;
     
 }
 .anuncio.ativo {
@@ -351,7 +351,7 @@ section {
 }
 
 .card {
-     margin: 10px;
+    margin: 10px;
     width: 110px;
     height: 160px;
     display: flex;
@@ -374,13 +374,18 @@ input {
 
 /* ===== FOOTER ===== */
 .footer {
-    position: relative;
+    position: fixed;
     background: linear-gradient(to top, #000, #1a0000);
     box-shadow: 0 0 5px #8b0000, 0 0 10px #ff1a1a, 0 0 20px #ff4d4d;
     color: #fff;
     padding: 40px 20px;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 90px;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    z-index: 999;
+    
 }
 
 .footer::before {
@@ -436,12 +441,81 @@ input {
     color: #777;
 }
 
+.footer2{
+    position: relative;
+    background: linear-gradient(to top, #000, #1a0000);
+    box-shadow: 0 0 5px #8b0000, 0 0 10px #ff1a1a, 0 0 20px #ff4d4d;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 90px;
+    
+}
+
+.footer2::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 20px;
+    width: 100%;
+    height: 10px;
+    background-image: radial-gradient(circle, #ffd700 4px, transparent 5px);
+    background-size: 30px 10px;
+    background-repeat: repeat-x;
+    filter: drop-shadow(0 0 5px #ffd700);
+    animation: bolinhasAndando 2s linear infinite;
+}
+
+.footer-logo {
+    font-size: 28px;
+    background: linear-gradient(45deg, #ff004c, #ffcc00);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.footer-text {
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.footer-links {
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    color: #ffcc00;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.footer-links a:hover {
+    color: #fff;
+    text-shadow: 0 0 10px #ffcc00;
+}
+
+.footer-copy {
+    font-size: 12px;
+    color: #777;
+}
+
+
+
 .mais{
     width: 50px;
     height: 50px;
     border-radius: 8px;
     background: linear-gradient(165deg, #f5d547, #c9a400);
     border: 3px solid #b89600;
+    margin-top: 20px;
+    font-size: 30px;
+    color: white;
 
     animation: cassino 0.5s ease-in-out infinite;
    
@@ -461,10 +535,13 @@ input {
     width: 50px;
     height: 50px;
     border-radius: 8px;
-    margin-top: 60px;
+    margin-top: 80px;
     margin-left: -60px;
     background: linear-gradient(165deg, #f5d547, #c9a400);
     border: 3px solid #b89600;
+    font-size: 30px;
+    color: white;
+    
     
 }
 
@@ -478,7 +555,7 @@ input {
 }
 
 .botao_aposta{
-    margin-top: -240px;
+    margin-top: -270px;
     margin-bottom: -500px;
     margin-left: 110px;
     display: flex;
@@ -490,7 +567,7 @@ input {
 
 /*botao apostar*/
 .pode{
-    height: 80px;
+    height: 90px;
     width: 400px;
     border-radius: 15px;
     background: linear-gradient(165deg, #01ce75, #01ce75);
@@ -502,6 +579,14 @@ input {
         girarBordapode 4s linear infinite,
         brilhoPulsepode 3s ease-in-out infinite,
         pulsar 0.4s infinite ease-in-out;
+}
+
+.pode:hover {
+	background-color:#00946a;
+}
+.pode:active {
+	position:relative;
+	top:1px;
 }
 
 @property --a {
@@ -554,13 +639,7 @@ input {
   }
 }
 
-.pode:hover {
-	background-color:#00946a;
-}
-.pode:active {
-	position:relative;
-	top:1px;
-}
+
 
 
 .batao_coletar{
@@ -573,7 +652,7 @@ input {
 
 /*botao coletar*/
 .coletar{
-    margin-top: -70px;
+    margin-top: 12px;
     height: 70px;
     width: 400px;
     border-radius: 15px;
@@ -582,6 +661,12 @@ input {
     font-size: 30px;
     color: #52000f;
     font-weight: bold;
+
+}
+
+.brilho{
+    background: linear-gradient(165deg, #e2042d, #c00225);
+    color: #ffffff;
 
 }
 
@@ -823,6 +908,7 @@ input {
     background: linear-gradient(165deg, #f5d547, #c9a400);
     border: 3px solid #b89600;
     animation: cassino 0.5s ease-in-out infinite;
+    margin-top: 20px;
 }
 
 .caixa-aposta h1 {
@@ -848,7 +934,7 @@ input {
     margin-left: 1500px;
     position: relative;
     width: 400px;
-    height: 560px;
+    height: 600px;
     overflow: hidden;
     border-radius: 10px;
      box-shadow:
@@ -870,12 +956,12 @@ input {
 }
 
 .container{
-    margin-top:  60px;
+    margin-top:  50px;
     margin-left: 70px;
     margin-bottom: 30px;
     position: relative;
     width: 470px;
-    height: 550px;
+    height: 600px;
     overflow: hidden;
     border-radius: 10px;
     box-shadow:
@@ -887,9 +973,8 @@ input {
 
 .ganho{
     position: absolute;
-    left: 860px;
+    left: 650px;
     top: 150px;
-    font-family: 'Great Vibes', cursive;
     font-size: 40px;
     text-align: center;
     background: linear-gradient(90deg, #fff3a0, #ffd700, #ffb300, #fff3a0);
@@ -901,23 +986,98 @@ input {
     animation: brilhoTitulo 3s linear infinite;
     margin-bottom: 10px;
     padding: 10px;
+    font-weight: bold;
 }
 
 .perdeModal{
 
-    background-color: rgba(60, 0, 0, 0.615);
+    background-color: #3d0000a5;
     text-align: center;
     text-align: justify;
-    width: 350px;
-    height: 400px;
+    width: 450px;
+    height: 500px;
     overflow: hidden;
     border-radius: 10px;
-    box-shadow:
-    inset 0 0 10px #000000,
-    0 0 5px #8b0000,
-    0 0 12px #ff1a1a,
-    0 0 24px  #ff4d4d;
+    border: 10px solid #000000;
+    
 }
 .perdeModal h1{
     color: white;
+    
 }
+
+
+.perdeModal img{
+   width: 250px;
+   padding-bottom: -50px;
+   padding-left: 50px;
+   padding-top: -100px;
+   
+}
+
+.botao_dnovo{
+    height: 70px;
+    width: 100px;
+    border-radius: 8px;
+    background: linear-gradient(165deg, #01ce75, #01ce75);
+    border: 3px solid #00c16d;
+    font-size: 15px;
+    color: #012f1b; 
+    font-weight: bold;
+    margin-left: 90px;
+    margin-top: -10px;
+    animation: 
+        girarBordapode 4s linear infinite,
+        brilhoPulsepode 3s ease-in-out infinite,
+        pulsar 0.4s infinite ease-in-out;
+
+
+}
+
+
+
+.botao_desistir{
+    height: 70px;
+    width: 100px;
+    border-radius: 15px;
+    background: linear-gradient(165deg, #ce1c01, #ce1c01);
+    border: 3px solid #ab1902;
+    font-size: 15px;
+    color: #590d01; 
+    font-weight: bold;
+    margin-left: 40px;
+    
+    
+
+}
+
+
+.botaos_perdeu{
+    display: inline-block;
+}
+
+
+.gameOverModal{
+    background-color: rgb(0, 0, 0);
+    text-align: center;
+    text-align: justify;
+    width: 450px;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 10px solid #3d0000;
+
+}
+
+.gameOverModal img{
+   width: 350px;
+   padding-bottom: -50px;
+   padding-left: 50px;
+   padding-top: -100px;
+}
+
+.gameOverModal h1{
+    color: white;
+    margin-left: 190px;
+}
+
