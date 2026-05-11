@@ -21,7 +21,7 @@
             <div class="titulo-container">
                 <h1 class="titulo">Cards of Fortune</h1>
             </div>
-            <a href="index.html" class="link-saldo">Sair</a>
+            <button class="link-saldo" onclick="document.getElementById('sairModal').showModal()">Sair</button>
         </nav>
     </header>
 
@@ -143,6 +143,16 @@
         <button class="botao_dnovo" onclick="reload()">Desistir</button>
     </dialog>
 
+    <dialog class="sairModal" id="sairModal">
+        <h1 id="sairTexto"></h1>
+       <div class="botaos_sair">
+        <button class="continua" onclick="sairModal.close()">Continuar</button>
+        <button class="botao_sair" onclick="reload()">Sair</button>
+       </div>
+    </dialog>
+
+
+
 
     <dialog class="perdeModal" id="coletaModal">
         <h1 id="valorModal"></h1>
@@ -194,7 +204,8 @@
     <script src="Scr/cartas.js"></script>
     <script src="Scr/timer.js"></script>
     <script src="Scr/anuncio.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@hiseb/confetti@2.1.0/dist/confetti.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@4.0.0-beta.16/tsparticles.confetti.bundle.min.js"></script>
 </body>
 
 </html>
+
