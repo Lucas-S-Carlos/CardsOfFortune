@@ -28,13 +28,20 @@ function Sorteio(carta){
 
     if (valorDaAposta >= 20) {
         ValorDoSorteio = ValorDoSorteio + 1;
-    } if (valorDaAposta >= 50) {
+    } 
+    if (valorDaAposta >= 50 || parseInt(saldoAtual.innerText) >= 50) {
+        console.log("entrou no if do 50")
         ValorDoSorteio = ValorDoSorteio + 1;
-    } if (valorDaAposta >= 130) {
+    } 
+    if (valorDaAposta >= 130 || parseInt(saldoAtual.innerText) >= 130) {
         ValorDoSorteio = ValorDoSorteio + 1;
-    } if (valorDaAposta >= 200){
+    } 
+    if (valorDaAposta >= 200 || parseInt(saldoAtual.innerText) >= 300){
         morteCerta = true
     }
+
+
+
 
 
     console.log(ValorDoSorteio)
@@ -224,7 +231,7 @@ function sorteResto(sorte, carta, valorDaAposta){
     else if((sorte > 30) && (sorte <= 80)){                                 //31 até 80
         bomba(carta, valorDaAposta)
     } 
-    else if((sorte > 80) && (sorte <= 85)){                                 //81 até 85
+    else if((sorte > 80) && (sorte <= 81)){                                 //81 até 85
         duplicador(carta)
 
         confetti({
@@ -233,7 +240,7 @@ function sorteResto(sorte, carta, valorDaAposta){
         origin: { y: .6 }
       });
     } 
-    else if(sorte > 85) {                                                   //86 até 100
+    else if(sorte > 81) {                                                   //86 até 100
         divididor(carta)
     } 
 }
@@ -279,7 +286,7 @@ function sorteResto2(sorte, carta, valorDaAposta){
         origin: { y: .6 }
       });
     } 
-    else if(sorte > 81) {                                                   //86 até 100
+    else if(sorte > 80) {                                                   //86 até 100
         divididor(carta)
     } 
 }
