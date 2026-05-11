@@ -3,6 +3,13 @@ let ganhoEL = document.getElementById("ganho");
 
 
 function rara(carta, valorDaAposta){
+    confetti({
+// Origin position
+    count: 100,			// Number of particles
+    size: 2,			// Size of the particles
+    velocity: 200,		// Initial particle velocity
+    fade: false			// Particles fall off the screen, or fade out
+});
     carta.style.backgroundImage = 'url(Scr/Assets/Cards/Rara.png)';
        
         valorGanho = valorGanho + (3 * valorDaAposta);
@@ -10,6 +17,13 @@ function rara(carta, valorDaAposta){
         ganhoEL.innerHTML = `Triplicou! Ganhou ${valorGanho}`;
 }
 function incomum(carta, valorDaAposta){
+    confetti({
+  	// Origin position
+    count: 100,			// Number of particles
+    size: 1,			// Size of the particles
+    velocity: 200,		// Initial particle velocity
+    fade: false			// Particles fall off the screen, or fade out
+});
     carta.style.backgroundImage = "url(Scr/Assets/Cards/Incomum.png)";
 
     valorGanho = valorGanho + (2 * valorDaAposta)
@@ -53,6 +67,13 @@ function bomba(carta, valorDaAposta){
 }
 
 function duplicador(carta){
+    confetti({
+       	// Origin position
+        count: 100,			// Number of particles
+        size: 3,			// Size of the particles
+        velocity: 200,		// Initial particle velocity
+        fade: false			// Particles fall off the screen, or fade out
+    });
     carta.style.backgroundImage = "url(Scr/Assets/Cards/Duplicador.png)";
     valorGanho = valorGanho * 2
  

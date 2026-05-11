@@ -28,20 +28,13 @@ function Sorteio(carta){
 
     if (valorDaAposta >= 20) {
         ValorDoSorteio = ValorDoSorteio + 1;
-    } 
-    if (valorDaAposta >= 50 || parseInt(saldoAtual.innerText) >= 50) {
-        console.log("entrou no if do 50")
+    } if (valorDaAposta >= 50) {
         ValorDoSorteio = ValorDoSorteio + 1;
-    } 
-    if (valorDaAposta >= 130 || parseInt(saldoAtual.innerText) >= 130) {
+    } if (valorDaAposta >= 130) {
         ValorDoSorteio = ValorDoSorteio + 1;
-    } 
-    if (valorDaAposta >= 200 || parseInt(saldoAtual.innerText) >= 300){
+    } if (valorDaAposta >= 200){
         morteCerta = true
     }
-
-
-
 
 
     console.log(ValorDoSorteio)
@@ -77,31 +70,17 @@ function Sorte1(sorte, carta, valorDaAposta){
     if (sorte <= 20){                                                       // 1 até 20
         rara(carta, valorDaAposta)
         
-        confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: .6 }
-      });
 
     } 
     else if((sorte > 20) && (sorte <= 50)){                                 //21 até 50
         incomum(carta, valorDaAposta)
 
-        confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: .6 }
-      });
+  
 
     } 
     else if(sorte > 50){                                                    //51 até 80
         comum(carta, valorDaAposta)
 
-        confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: .6 }
-      });
     } 
 
 }
@@ -111,30 +90,18 @@ function Sorte2(sorte, carta, valorDaAposta){
     if (sorte <= 10){                                                       // 1 até 10
         rara(carta, valorDaAposta)
 
-        confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: .6 }
-      });
+          
     } 
     else if((sorte > 10) && (sorte <= 30)){                                 //11 até 30
         incomum(carta, valorDaAposta)
 
-        confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: .6 }
-      });
+          
 
     } 
     else if((sorte > 30) && (sorte <= 70)){                                 //31 até 70
         comum(carta, valorDaAposta)
 
-        confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: .6 }
-      });
+          
     } 
     else if((sorte > 70) && (sorte <= 80)){                                 //71 até 80
         bomba(carta, valorDaAposta)
@@ -142,11 +109,7 @@ function Sorte2(sorte, carta, valorDaAposta){
     } else if((sorte > 80) && (sorte <= 87)){                               //81 até 87
         duplicador(carta)
 
-        confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: .6 }
-      });
+          
     } 
     else if(sorte > 87) {                                                   //88 até 100
         divididor(carta)
@@ -158,29 +121,17 @@ function Sorte3(sorte, carta, valorDaAposta){
     if (sorte <= 3){                                                       // 1 até 3
         rara(carta, valorDaAposta)
 
-        confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: .6 }
-      });
+          
     } 
     else if((sorte > 3) && (sorte <= 17)){                                 //4 até 17
         incomum(carta, valorDaAposta)
 
-        confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: .6 }
-      });
+          
     } 
     else if((sorte > 17) && (sorte <= 37)){                                 //18 até 37
         comum(carta, valorDaAposta)
 
-        confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: .6 }
-      });
+          
     } 
     else if((sorte > 37) && (sorte <= 77)){                                 //38 até 67
         bomba(carta, valorDaAposta)
@@ -188,11 +139,7 @@ function Sorte3(sorte, carta, valorDaAposta){
     else if((sorte > 77) && (sorte <= 80)){                                 //68 até 70
         duplicador(carta)
 
-        confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: .6 }
-      });
+          
     } 
     else if(sorte > 80) {                                                   //71 até 100
         divididor(carta)
@@ -204,43 +151,27 @@ function sorteResto(sorte, carta, valorDaAposta){
     if (sorte <= 3){                                                       // 1 até 3
         rara(carta, valorDaAposta)
 
-        confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: .6 }
-      });
+          
     } 
     else if((sorte > 3 && (sorte <= 13))){                                 //4 até 13
         incomum(carta, valorDaAposta)
 
-        confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: .6 }
-      });
+          
     } 
     else if((sorte > 13) && (sorte <= 30)){                                 //14 até 30
         comum(carta, valorDaAposta)
 
-        confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: .6 }
-      });
+          
     } 
     else if((sorte > 30) && (sorte <= 80)){                                 //31 até 80
         bomba(carta, valorDaAposta)
     } 
-    else if((sorte > 80) && (sorte <= 81)){                                 //81 até 85
+    else if((sorte > 80) && (sorte <= 85)){                                 //81 até 85
         duplicador(carta)
 
-        confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: .6 }
-      });
+          
     } 
-    else if(sorte > 81) {                                                   //86 até 100
+    else if(sorte > 85) {                                                   //86 até 100
         divididor(carta)
     } 
 }
@@ -250,29 +181,17 @@ function sorteResto2(sorte, carta, valorDaAposta){
     if (sorte <= 1){                                                       // 1 
         rara(carta, valorDaAposta)
 
-        confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: .6 }
-      });
+          
     } 
     else if((sorte > 1 && (sorte <= 6))){                                 //4 até 13
         incomum(carta, valorDaAposta)
 
-        confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: .6 }
-      });
+          
     } 
     else if((sorte > 6) && (sorte <= 20)){                                 //14 até 30
         comum(carta, valorDaAposta)
 
-        confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: .6 }
-      });
+          
     } 
     else if((sorte > 20) && (sorte <= 80)){                                 //31 até 80
         bomba(carta, valorDaAposta)
@@ -280,11 +199,7 @@ function sorteResto2(sorte, carta, valorDaAposta){
     else if((sorte > 80) && (sorte <= 81)){                                 //81 até 85
         duplicador(carta)
 
-        confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: .6 }
-      });
+          
     } 
     else if(sorte > 81) {                                                   //86 até 100
         divididor(carta)
