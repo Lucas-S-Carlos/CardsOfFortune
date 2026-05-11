@@ -3,35 +3,38 @@ let ganhoEL = document.getElementById("ganho");
 
 
 function rara(carta, valorDaAposta){
+    virar(carta, 'url(Scr/Assets/Cards/Rara.png)')
+    
     confetti({
-// Origin position
-    count: 100,			// Number of particles
-    size: 2,			// Size of the particles
-    velocity: 200,		// Initial particle velocity
-    fade: false			// Particles fall off the screen, or fade out
-});
-    carta.style.backgroundImage = 'url(Scr/Assets/Cards/Rara.png)';
+        count: 100,			
+        size: 2,			
+        velocity: 200,	
+        fade: false		
+    });
        
-        valorGanho = valorGanho + (3 * valorDaAposta);
+    valorGanho = valorGanho + (3 * valorDaAposta);
 
-        ganhoEL.innerHTML = `Triplicou! Ganhou ${valorGanho}`;
+    ganhoEL.innerHTML = `Triplicou! Ganhou ${valorGanho}`;
 }
+
+
 function incomum(carta, valorDaAposta){
+    virar(carta, "url(Scr/Assets/Cards/Incomum.png)")
+
     confetti({
-  	// Origin position
-    count: 100,			// Number of particles
-    size: 1,			// Size of the particles
-    velocity: 200,		// Initial particle velocity
-    fade: false			// Particles fall off the screen, or fade out
-});
-    carta.style.backgroundImage = "url(Scr/Assets/Cards/Incomum.png)";
+        count: 100,			
+        size: 1,		
+        velocity: 200,		
+        fade: false			
+    });
 
     valorGanho = valorGanho + (2 * valorDaAposta)
-
     ganhoEL.innerHTML = `Duplicou! Ganhou ${valorGanho}`; 
 }
+
+
 function comum(carta, valorDaAposta){ 
-    carta.style.backgroundImage = "url(Scr/Assets/Cards/Comum.png)";
+    virar(carta, "url(Scr/Assets/Cards/Comum.png)")
 
     valorGanho = valorGanho + valorDaAposta
 
@@ -42,8 +45,8 @@ function comum(carta, valorDaAposta){
 
 function bomba(carta, valorDaAposta){
     
+    virar(carta, "url(Scr/Assets/Cards/Bomba.png)")
 
-    carta.style.backgroundImage = "url(Scr/Assets/Cards/Bomba.png)";
     valorGanho = 0
 
     virarTudo()
@@ -67,6 +70,8 @@ function bomba(carta, valorDaAposta){
 }
 
 function duplicador(carta){
+    virar(carta, "url(Scr/Assets/Cards/Duplicador.png)")
+
     confetti({
        	// Origin position
         count: 100,			// Number of particles
@@ -74,21 +79,31 @@ function duplicador(carta){
         velocity: 200,		// Initial particle velocity
         fade: false			// Particles fall off the screen, or fade out
     });
-    carta.style.backgroundImage = "url(Scr/Assets/Cards/Duplicador.png)";
+
     valorGanho = valorGanho * 2
  
     ganhoEL.innerHTML = `Dobrou! Ganhou ${valorGanho}`;
 }
 
 function divididor(carta){
-    carta.style.backgroundImage = "url(Scr/Assets/Cards/Faca.png)";
+    virar(carta, "url(Scr/Assets/Cards/Faca.png)")
+
     ganhoEL.innerHTML = `Assalto!!! Te roubaram ${parseInt((valorGanho / 10) / 4)*10*3}!`;
 
     valorGanho = parseInt((valorGanho / 10) / 4)*10
 
     ganhoEL.innerHTML = ganhoEL.innerHTML + ` Lhe restou ${valorGanho}`
 
-    
-
-
 }
+
+
+function virar(carta, imagem) {
+    carta.style.transform = "scaleX(0)";
+
+    setTimeout(() => {
+        carta.style.transform = "scaleX(1)";
+    }, 500);
+    setTimeout(() => {carta.style.backgroundImage = imagem;}, 500);
+
+
+    }

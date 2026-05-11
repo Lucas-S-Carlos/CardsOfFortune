@@ -351,6 +351,7 @@ section {
 }
 
 .card {
+    transform-origin: center;
     margin: 10px;
     width: 110px;
     height: 160px;
@@ -358,12 +359,12 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  
+
+    transition: transform 0.5s ease;
+
     border-radius: 10px;
     background: linear-gradient(165deg, #f5d547, #c9a400);
     border: 3px solid #b89600;
-    
-    
 }
 
 p,
@@ -1081,3 +1082,12 @@ input {
     margin-left: 190px;
 }
 
+.sair {
+    background-color: #ff0000a5;
+    text-align: center;
+    text-align: justify;
+    color: white;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 10px solid #ff0000;
+}
