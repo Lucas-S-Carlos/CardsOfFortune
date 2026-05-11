@@ -1,17 +1,19 @@
 document.getElementById("entrada").value = 0
 
+
 const coletaModal = document.getElementById("coletaModal") 
 let perdeModal = document.getElementById("perdeModal")
 let overModal = document.getElementById("gameOverModal")
 const resultado = document.getElementById("valorModal")
-
+let sairModal = document.getElementById("sairModal");
 const aMais = document.getElementById("mais")
 const aMenos = document.getElementById("menos")
 
 let saldoAtual = document.getElementById("saldoAtual")
 
-saldoAtual.innerHTML= localStorage.getItem('saldo');
+saldoAtual.innerHTML= localStorage.getItem('saldo') || 0;
 
+document.getElementById('sairTexto').innerHTML=`Saldo final ${saldoAtual.innerText}`;
 let valorGanho = 0
 let saldoPos = 0
 
@@ -105,3 +107,4 @@ function poder(){
     }
     
 }
+
