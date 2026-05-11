@@ -126,33 +126,34 @@
             </div>
         </div>
     
-    <div id="gif" style="display:none;">
-      <img src="Scr/Assets/imagens/bum.gif">
-    </div>
 
-    <dialog class="perdeModal"  id="perdeModal">
+
+   
+    <dialog class="perdeModal" id="perdeModal">
         <h1>Perdeu tudo</h1>
-         
-        <button onclick="continuar('perdeu')">Tente novamente</button>
-        <button onclick="reload()">Desistir</button>
+          <img class="bum" src="Scr/Assets/imagens/bum.gif" />
+       <div class="botaos_perdeu">
+        <button class="botao_dnovo" onclick="continuar('perdeu')">Tente novamente</button>
+        <button class="botao_desistir" onclick="reload()">Desistir</button>
+       </div>
     </dialog>
-    <dialog class="perdeModal"  id="gameOverModal">]
-        <h1>Perdeu tudo</h1>
-        <img class="bum" src="Scr/Assets/imagens/bum.gif" />
-        <button onclick="reload()">Desistir</button>
+    <dialog class="gameOverModal" id="gameOverModal">
+        <h1>Faliu :(</h1>
+        <img class="bum" src="Scr/Assets/imagens/capirava.gif" />
+        <button class="botao_dnovo" onclick="reload()">Desistir</button>
     </dialog>
 
 
     <dialog class="perdeModal" id="coletaModal">
         <h1 id="valorModal"></h1>
-        <button onclick="continuar('ganhou')">Continue jogando</button>
-        <button onclick="reload()">Sair</button>
+        <button  class="botao_dnovo" onclick="continuar('ganhou')">Continue jogando</button>
+        <button class="botao_desistir" onclick="reload()">Sair</button>
     </dialog>
     <dialog class="perdeModal" id="tempoModal">
         <h1 id="tempoModaltxt"></h1>
-        <button onclick="reload()">Sair</button>
+        <button class="botao_dnovo" onclick="reload()">Sair</button>
     </dialog>
-    <footer class="footer">
+    <footer class="footer2">
         <div class="footer-content">
             <h2 class="footer-logo">CARDS OF FORTUNE</h2>
             <p class="footer-text">
@@ -168,22 +169,6 @@
         </div>
     </footer>
 
-
-    <footer class="footer">
-        <div class="footer-content">
-            <h2 class="footer-logo">CARDS OF FORTUNE</h2>
-            <p class="footer-text">
-                Projeto desenvolvido exclusivamente para fins educacionais, no âmbito das atividades acadêmicas da
-                ETEC de Guarulhos.
-            </p>
-            <div class="footer-links">
-                <a>Termos</a>
-                <a>Privacidade</a>
-                <a>Suporte</a>
-            </div>
-            <p class="footer-copy">© 2026 DSBet - Todos os direitos reservados</p>
-        </div>
-    </footer>
 
        
       <script>
@@ -209,6 +194,7 @@
     <script src="Scr/cartas.js"></script>
     <script src="Scr/timer.js"></script>
     <script src="Scr/anuncio.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@4.0.0-beta.16/tsparticles.confetti.bundle.min.js"></script>
 </body>
 
 </html>
