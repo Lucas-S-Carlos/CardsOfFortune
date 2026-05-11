@@ -13,7 +13,7 @@ let saldoAtual = document.getElementById("saldoAtual")
 
 saldoAtual.innerHTML= localStorage.getItem('saldo') || 0;
 
-document.getElementById('sairTexto').innerHTML=`Saldo final ${saldoAtual.innerText}`;
+document.getElementById('sairTexto').innerHTML=`Seu saldo atual é ${saldoAtual.innerText} fixas, deseja desistir?`;
 let valorGanho = 0
 let saldoPos = 0
 
