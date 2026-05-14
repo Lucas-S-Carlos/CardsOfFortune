@@ -19,6 +19,7 @@ function Sorteio(carta){
 
     if (CartasViradas == 2){
         coletar.disabled=false
+        coletar.classList.add("brilho")
     }
 
     let ValorDoSorteio = CartasViradas
