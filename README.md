@@ -1,12 +1,12 @@
 # Sobre:
 
-Este projeto foi feito para a Semana Paulo Freire, o tema da nossa sala foi sobre:  
+Este projeto foi feito para a Semana Paulo Freire da Etec de Guarulhos, o tema da nossa sala foi sobre:  
 CASSINO!!!  
 <img width="200"  alt="kass" src="https://github.com/user-attachments/assets/4c2be5af-88dd-4e52-995f-e2a2a197f086" />  
   
 O jogo feito foi **CARDS OF FORTUNE**, ele foi baseado num jogo que eu (Lucas Siqueira, que está escrevendo isso) ouvi falar em um vídeo.  
 
-Ele consiste virara cartas e baseado no quanto você apostou mais você ganhará!! ~~supostamente~~.
+Ele consiste em virar as cartas e baseado no quanto você apostou mais você ganhará!! ~~supostamente~~.
 
 ## Creditos:
 * Eduardo Andrade (front-end)
