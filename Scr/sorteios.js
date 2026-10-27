@@ -67,8 +67,6 @@ function Sorteio(carta){
         console.log("sorteresto2")
     }
 
-
-
     CartasViradas = CartasViradas + 1
 }
 
@@ -80,7 +78,7 @@ function Sorte1(sorte, carta, valorDaAposta){
     else if((sorte > 20) && (sorte <= 50)){                                 //21 até 50
         incomum(carta, valorDaAposta)
     } 
-    else if(sorte > 50){                                                    //51 até 80
+    else if(sorte > 50){                                                    //51 até 100//
         comum(carta, valorDaAposta)
     } 
 
@@ -88,17 +86,17 @@ function Sorte1(sorte, carta, valorDaAposta){
 
 function Sorte2(sorte, carta, valorDaAposta){
 
-    if (sorte <= 10){                                                       // 1 até 10
+    if (sorte <= 5){                                                       // 1 até 5
         rara(carta, valorDaAposta)
     } 
-    else if((sorte > 10) && (sorte <= 30)){                                 //11 até 30
+    else if((sorte > 5) && (sorte <= 20)){                                 //5 até 20
         incomum(carta, valorDaAposta)
 
     } 
-    else if((sorte > 30) && (sorte <= 70)){                                 //31 até 70
+    else if((sorte > 20) && (sorte <= 50)){                                 //20 até 50//
         comum(carta, valorDaAposta)
     } 
-    else if((sorte > 70) && (sorte <= 80)){                                 //71 até 80
+    else if((sorte > 50) && (sorte <= 80)){                                 //50 até 80
         bomba(carta, valorDaAposta)
     } else if((sorte > 80) && (sorte <= 87)){                               //81 até 87
         duplicador(carta)
@@ -110,65 +108,58 @@ function Sorte2(sorte, carta, valorDaAposta){
 
 function Sorte3(sorte, carta, valorDaAposta){
 
-    if (sorte <= 3){                                                       // 1 até 3
+    if (sorte <= 2){                                                       // 1 até 2
         rara(carta, valorDaAposta)
     } 
-    else if((sorte > 3) && (sorte <= 17)){                                 //4 até 17
+    else if((sorte > 2) && (sorte <= 5)){                                 //2 até 5
         incomum(carta, valorDaAposta)
     } 
-    else if((sorte > 17) && (sorte <= 37)){                                 //18 até 37
+    else if((sorte > 5) && (sorte <= 10)){                                 //5 até 10 //
         comum(carta, valorDaAposta)
     } 
-    else if((sorte > 37) && (sorte <= 77)){                                 //38 até 67
+    else if((sorte > 10) && (sorte <= 88)){                                 //20 até 77
         bomba(carta, valorDaAposta)
     } 
-    else if((sorte > 77) && (sorte <= 80)){                                 //68 até 70
+    else if((sorte > 88) && (sorte <= 90)){                                 //68 até 70
         duplicador(carta)
     } 
-    else if(sorte > 80) {                                                   //71 até 100
+    else if(sorte > 90) {                                                   //90 até 100
         divididor(carta)
     } 
 }
 
 function sorteResto(sorte, carta, valorDaAposta){
     console.log("sorteresto")
-    if (sorte <= 3){                                                       // 1 até 3
-        rara(carta, valorDaAposta)
-    } 
-    else if((sorte > 3 && (sorte <= 13))){                                 //4 até 13
+    if(sorte <= 1){                                                        //até 3
         incomum(carta, valorDaAposta)
     } 
-    else if((sorte > 13) && (sorte <= 30)){                                 //14 até 30
+    else if((sorte > 3) && (sorte <= 5)){                                 //4 até 5 //
         comum(carta, valorDaAposta)
     } 
-    else if((sorte > 30) && (sorte <= 80)){                                 //31 até 80
+    else if((sorte > 5) && (sorte <= 80)){                                 //31 até 80
         bomba(carta, valorDaAposta)
     } 
     else if((sorte > 80) && (sorte <= 81)){                                 //81 até 85
         duplicador(carta)
     } 
-    else if(sorte > 81) {                                                   //86 até 100
+    else if(sorte > 90) {                                                   //86 até 100
         divididor(carta)
     } 
 }
 
 function sorteResto2(sorte, carta, valorDaAposta){
     console.log("sorteresto")
-    if (sorte <= 1){                                                       // 1 
-        rara(carta, valorDaAposta)
-    } 
-    else if((sorte > 1 && (sorte <= 4))){                                 //2 até 4
-        incomum(carta, valorDaAposta)
-    } 
-    else if((sorte > 4) && (sorte <= 10)){                                 //4 até 10
+
+    if((sorte <= 1)){                                                      //1 até 5 //
         comum(carta, valorDaAposta)
     } 
-    else if((sorte > 10) && (sorte <= 90)){                                 //10 até 90
+    else if((sorte > 1) && (sorte <= 95)){                                 //5 até 90
         bomba(carta, valorDaAposta)
     } 
-    else  if(sorte > 90) {                                                   //90 até 100
+    else  if(sorte > 95) {                                                   //90 até 100
         divididor(carta)
     } 
+
 }
 
 function morte(sorte, carta, valorDaAposta){                            
