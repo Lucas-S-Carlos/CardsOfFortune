@@ -13,5 +13,5 @@ Ele consiste virara cartas e baseado no quanto você apostou mais você ganhará
 * Guilherme Agra (back-end)
 * Lucas Siqueira (Back-end e líder do projeto)
 * Mariana (front-end)
-* Matheus Linfante (back-end)
+* Matheus Lifante (back-end)
 * Milena (back-end)
