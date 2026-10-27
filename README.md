@@ -11,6 +11,7 @@ Ele consiste virara cartas e baseado no quanto você apostou mais você ganhará
 ## Creditos:
 * Eduardo Andrade (front-end)
 * Guilherme Agra (back-end)
+* Giovanni Andrews (Arte das cartas)
 * Lucas Siqueira (Back-end e líder do projeto)
 * Mariana (front-end)
 * Matheus Lifante (back-end)
