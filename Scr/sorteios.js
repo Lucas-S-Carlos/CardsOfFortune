@@ -157,16 +157,16 @@ function sorteResto2(sorte, carta, valorDaAposta){
     if (sorte <= 1){                                                       // 1 
         rara(carta, valorDaAposta)
     } 
-    else if((sorte > 1 && (sorte <= 6))){                                 //4 até 13
+    else if((sorte > 1 && (sorte <= 4))){                                 //2 até 4
         incomum(carta, valorDaAposta)
     } 
-    else if((sorte > 6) && (sorte <= 20)){                                 //14 até 30
+    else if((sorte > 4) && (sorte <= 10)){                                 //4 até 10
         comum(carta, valorDaAposta)
     } 
-    else if((sorte > 20) && (sorte <= 80)){                                 //31 até 80
+    else if((sorte > 10) && (sorte <= 90)){                                 //10 até 90
         bomba(carta, valorDaAposta)
     } 
-    else  if(sorte > 80) {                                                   //86 até 100
+    else  if(sorte > 90) {                                                   //90 até 100
         divididor(carta)
     } 
 }
